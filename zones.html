@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Zones desservies — MS Toiture | Rive-Sud, QC</title>
+<meta name="description" content="MS Toiture intervient à Brossard, Longueuil, Saint-Lambert, Greenfield Park, Boucherville et partout sur la Rive-Sud de Montréal."/>
+<link rel="stylesheet" href="style.css"/>
+<style>
+.zone-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-bottom:32px; }
+@media(max-width:700px){.zone-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:420px){.zone-grid{grid-template-columns:1fr}}
+.zone-card {
+  background:var(--card); border:1px solid var(--line);
+  border-radius:16px; padding:20px;
+  transition:border-color .2s, transform .2s;
+}
+.zone-card:hover { border-color:rgba(42,109,217,.4); transform:translateY(-2px); }
+.zone-card h3 { font-family:'Syne',sans-serif; font-size:16px; margin-bottom:5px; }
+.zone-card p { color:var(--muted); font-size:13px; line-height:1.5; }
+.zone-icon { font-size:24px; margin-bottom:10px; display:block; }
+.map-placeholder {
+  background:var(--card); border:1px solid var(--line);
+  border-radius:var(--r); padding:32px; text-align:center;
+  margin-bottom:28px;
+}
+.map-placeholder p { color:var(--muted); font-size:14px; margin-top:10px; }
+</style>
+</head>
+<body data-page="zones">
+
+<main>
+  <section class="section">
+    <div class="wrap">
+      <span class="slabel">Couverture géographique</span>
+      <h1>Zones desservies</h1>
+      <p class="sdesc">MS Toiture intervient principalement sur la Rive-Sud de Montréal. Vous avez un doute pour votre secteur ? Contactez-nous directement et nous confirmons notre disponibilité.</p>
+
+      <div class="zone-grid">
+        <div class="zone-card">
+          <span class="zone-icon">📍</span>
+          <h3>Brossard</h3>
+          <p>Notre secteur principal. Intervention rapide garantie sur tout le territoire de Brossard.</p>
+        </div>
+        <div class="zone-card">
+          <span class="zone-icon">📍</span>
+          <h3>Longueuil</h3>
+          <p>Arrondissements du Vieux-Longueuil, Saint-Hubert et LeMoyne desservis régulièrement.</p>
+        </div>
+        <div class="zone-card">
+          <span class="zone-icon">📍</span>
+          <h3>Saint-Lambert</h3>
+          <p>Interventions fréquentes à Saint-Lambert et dans les quartiers avoisinants.</p>
+        </div>
+        <div class="zone-card">
+          <span class="zone-icon">📍</span>
+          <h3>Greenfield Park</h3>
+          <p>Secteur régulièrement desservi pour la réparation et l'entretien de toitures.</p>
+        </div>
+        <div class="zone-card">
+          <span class="zone-icon">📍</span>
+          <h3>Boucherville</h3>
+          <p>Interventions à Boucherville selon disponibilité et urgence du chantier.</p>
+        </div>
+        <div class="zone-card">
+          <span class="zone-icon">📍</span>
+          <h3>Saint-Bruno</h3>
+          <p>Saint-Bruno-de-Montarville et secteurs limitrophes — contactez-nous pour confirmer.</p>
+        </div>
+        <div class="zone-card">
+          <span class="zone-icon">📍</span>
+          <h3>Sainte-Catherine</h3>
+          <p>Interventions possibles à Sainte-Catherine et Candiac selon la nature des travaux.</p>
+        </div>
+        <div class="zone-card">
+          <span class="zone-icon">📍</span>
+          <h3>La Prairie</h3>
+          <p>La Prairie et secteurs environnants desservis selon disponibilité.</p>
+        </div>
+        <div class="zone-card">
+          <span class="zone-icon">🗺️</span>
+          <h3>Autres secteurs</h3>
+          <p>Vous n'êtes pas dans cette liste ? Appelez-nous — nous étudions chaque demande selon la nature et l'urgence des travaux.</p>
+        </div>
+      </div>
+
+      <!-- Note urgence -->
+      <div class="panel" style="margin-bottom:28px;border-color:rgba(232,160,32,.25);background:rgba(232,160,32,.06)">
+        <h3 style="color:var(--acc2);margin-bottom:8px">⚡ Urgences — toute la Rive-Sud</h3>
+        <p style="color:var(--muted);font-size:14px;line-height:1.7">
+          En cas de fuite active ou de dommage sérieux, nous évaluons toujours la possibilité d'intervenir rapidement même si vous êtes en dehors de nos zones habituelles. N'hésitez pas à appeler directement au <a href="tel:+15798860202" style="color:var(--acc2);font-weight:700">1 (579) 886-0202</a>.
+        </p>
+      </div>
+
+      <div style="background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:26px;display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:center">
+        <div>
+          <h3 style="font-family:'Syne',sans-serif;font-size:18px;margin-bottom:8px">Votre secteur n'est pas listé ?</h3>
+          <p style="color:var(--muted);font-size:14px;line-height:1.7;margin-bottom:16px">Contactez-nous et nous vous confirmons notre disponibilité. Nous faisons toujours de notre mieux pour accommoder les demandes urgentes.</p>
+          <a class="btn primary" href="contact.html">Nous contacter →</a>
+        </div>
+        <div>
+          <div class="kvi"><div class="kv-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.07 3.18 2 2 0 012 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div><div><span class="kk">Téléphone</span><a class="kv2 tel" href="tel:+15798860202">1 (579) 886-0202</a></div></div>
+          <div class="kvi"><div class="kv-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div><div><span class="kk">Siège</span><span class="kv2">6185 Taschereau Blvd #630<br>Brossard, QC J4Z 0E4</span></div></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+</main>
+
+<script src="nav.js"></script>
+</body>
+</html>
