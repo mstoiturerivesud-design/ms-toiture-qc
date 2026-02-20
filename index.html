@@ -100,3 +100,12 @@
 <script src="nav.js"></script>
 </body>
 </html>
+@media (max-width: 768px) {
+  .section > .wrap > div[style*="grid-template-columns"] {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+  .section > .wrap > div > .panel {
+    position: static !important;
+  }
+}
