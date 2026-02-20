@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="fr">
 <head>
 <meta charset="utf-8"/>
@@ -6,97 +7,154 @@
 <title>MS Toiture | Toiture & Déneigement | Brossard, QC</title>
 <meta name="description" content="MS Toiture à Brossard — réparation, inspection, entretien et déneigement de toiture sur la Rive-Sud. 1 (579) 886-0202."/>
 <link rel="stylesheet" href="style.css"/>
+<style>
+  /* ── HERO GRID ── */
+  .hero-layout {
+    display: grid;
+    grid-template-columns: 1.3fr 0.7fr;
+    gap: 22px;
+    align-items: start;
+  }
+
+/* ── MINI CARDS SERVICES ── */
+.services-mini {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 10px;
+margin-top: 4px;
+}
+
+/* ── MOBILE ── */
+@media (max-width: 768px) {
+
+```
+/* Hero : 1 colonne */
+.hero-layout {
+  grid-template-columns: 1fr !important;
+}
+
+/* Carte contact sticky → normale */
+.hero-layout > .panel {
+  position: static !important;
+  top: auto !important;
+  width: 100% !important;
+}
+
+/* Mini cards services : 1 colonne */
+.services-mini {
+  grid-template-columns: 1fr !important;
+}
+
+/* Boutons hero en colonne */
+.hero-btns {
+  flex-direction: column !important;
+}
+
+.hero-btns .btn {
+  width: 100% !important;
+  justify-content: center !important;
+}
+```
+
+}
+</style>
+
 </head>
 <body data-page="index">
 
 <main>
-  <section class="section" style="padding-top:64px">
-    <div class="wrap">
-      <div style="display:grid;grid-template-columns:1.3fr .7fr;gap:22px;align-items:start">
+  <section class="section" style="padding-top:64px">
+    <div class="wrap">
+      <div class="hero-layout">
 
-        <div>
-          <div class="hero-tag">Brossard & Rive-Sud · Urgences acceptées</div>
-          <h1 class="section" style="padding:0;font-size:44px;margin-bottom:14px">
-            Experts en toiture<br><em>depuis des années</em>
-          </h1>
-          <p class="sdesc">Réparation, inspection, entretien et déneigement de toiture sur la Rive-Sud de Montréal. Intervention rapide, diagnostic précis et travail soigné.</p>
-          <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:28px">
-            <a class="btn primary" href="contact.html">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/></svg>
-              Demander une soumission gratuite
-            </a>
-            <a class="btn blue" href="tel:+15798860202">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.07 3.18 2 2 0 012 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-              1 (579) 886-0202
-            </a>
-          </div>
+```
+    <div>
+      <div class="hero-tag">Brossard & Rive-Sud · Urgences acceptées</div>
+      <h1 class="section" style="padding:0;font-size:44px;margin-bottom:14px">
+        Experts en toiture<br><em>depuis des années</em>
+      </h1>
+      <p class="sdesc">Réparation, inspection, entretien et déneigement de toiture sur la Rive-Sud de Montréal. Intervention rapide, diagnostic précis et travail soigné.</p>
+      <div class="hero-btns" style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:28px">
+        <a class="btn primary" href="contact.html">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/></svg>
+          Demander une soumission gratuite
+        </a>
+        <a class="btn blue" href="tel:+15798860202">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.07 3.18 2 2 0 012 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          1 (579) 886-0202
+        </a>
+      </div>
 
-          <div class="stats">
-            <div class="stat"><span class="stat-n">100%</span><span class="stat-l">Satisfaction client</span></div>
-            <div class="stat"><span class="stat-n">RRQ ✓</span><span class="stat-l">Entreprise enregistrée</span></div>
-            <div class="stat"><span class="stat-n">7J/7</span><span class="stat-l">Urgences acceptées</span></div>
-          </div>
+      <div class="stats">
+        <div class="stat"><span class="stat-n">100%</span><span class="stat-l">Satisfaction client</span></div>
+        <div class="stat"><span class="stat-n">RRQ ✓</span><span class="stat-l">Entreprise enregistrée</span></div>
+        <div class="stat"><span class="stat-n">7J/7</span><span class="stat-l">Urgences acceptées</span></div>
+      </div>
 
-          <!-- Mini cards services -->
-          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:4px">
-            <a href="services.html" class="panel" style="text-decoration:none;padding:14px">
-              <div class="panel-icon" style="width:34px;height:34px;border-radius:9px;margin-bottom:9px">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:17px;height:17px;color:var(--blue2)"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
-              </div>
-              <h3 style="font-size:13px;margin-bottom:3px">Réparation</h3>
-              <p style="font-size:12px;color:var(--muted)">Fuite, infiltration, solins</p>
-            </a>
-            <a href="services.html#denei" class="panel" style="text-decoration:none;padding:14px">
-              <div class="panel-icon" style="width:34px;height:34px;border-radius:9px;margin-bottom:9px;background:rgba(100,180,255,.12);border-color:rgba(100,180,255,.22)">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:17px;height:17px;color:#7dd3fc"><line x1="12" y1="2" x2="12" y2="22"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
-              </div>
-              <h3 style="font-size:13px;margin-bottom:3px">Déneigement ❄</h3>
-              <p style="font-size:12px;color:var(--muted)">Toitures plates et en pente</p>
-            </a>
-            <a href="services.html#acier" class="panel" style="text-decoration:none;padding:14px">
-              <div class="panel-icon" style="width:34px;height:34px;border-radius:9px;margin-bottom:9px">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:17px;height:17px;color:var(--blue2)"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-              </div>
-              <h3 style="font-size:13px;margin-bottom:3px">Toiture acier</h3>
-              <p style="font-size:12px;color:var(--muted)">Installation & remplacement</p>
-            </a>
-          </div>
-        </div>
+      <!-- Mini cards services -->
+      <div class="services-mini">
+        <a href="services.html" class="panel" style="text-decoration:none;padding:14px">
+          <div class="panel-icon" style="width:34px;height:34px;border-radius:9px;margin-bottom:9px">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:17px;height:17px;color:var(--blue2)"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
+          </div>
+          <h3 style="font-size:13px;margin-bottom:3px">Réparation</h3>
+          <p style="font-size:12px;color:var(--muted)">Fuite, infiltration, solins</p>
+        </a>
+        <a href="services.html#denei" class="panel" style="text-decoration:none;padding:14px">
+          <div class="panel-icon" style="width:34px;height:34px;border-radius:9px;margin-bottom:9px;background:rgba(100,180,255,.12);border-color:rgba(100,180,255,.22)">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:17px;height:17px;color:#7dd3fc"><line x1="12" y1="2" x2="12" y2="22"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+          </div>
+          <h3 style="font-size:13px;margin-bottom:3px">Déneigement ❄</h3>
+          <p style="font-size:12px;color:var(--muted)">Toitures plates et en pente</p>
+        </a>
+        <a href="services.html#acier" class="panel" style="text-decoration:none;padding:14px">
+          <div class="panel-icon" style="width:34px;height:34px;border-radius:9px;margin-bottom:9px">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:17px;height:17px;color:var(--blue2)"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          </div>
+          <h3 style="font-size:13px;margin-bottom:3px">Toiture acier</h3>
+          <p style="font-size:12px;color:var(--muted)">Installation & remplacement</p>
+        </a>
+      </div>
+    </div>
 
-        <!-- Panel contact rapide -->
-        <div class="panel" style="position:sticky;top:82px">
-          <h2 style="font-family:'Syne',sans-serif;font-size:19px;margin-bottom:6px">Besoin d'une intervention ?</h2>
-          <p style="color:var(--muted);font-size:13px;line-height:1.6;margin-bottom:16px">Décrivez votre problème et nous vous répondons rapidement avec un diagnostic et une estimation.</p>
-          <div class="kvi"><div class="kv-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.07 3.18 2 2 0 012 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div><div><span class="kk">Téléphone</span><a class="kv2 tel" href="tel:+15798860202">1 (579) 886-0202</a></div></div>
-          <div class="kvi"><div class="kv-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div><div><span class="kk">Courriel</span><a class="kv2" href="mailto:mstoiture@gmail.com">mstoiture@gmail.com</a></div></div>
-          <div class="kvi"><div class="kv-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><div><span class="kk">Disponibilité</span><span class="kv2">Lun–Sam · Urgences 7j/7</span></div></div>
-          <div style="height:10px"></div>
-          <a class="btn primary full" href="contact.html">Demander une soumission gratuite</a>
-          <a class="btn full" href="tel:+15798860202">Appeler maintenant</a>
-        </div>
+    <!-- Panel contact rapide -->
+    <div class="panel" style="position:sticky;top:82px">
+      <h2 style="font-family:'Syne',sans-serif;font-size:19px;margin-bottom:6px">Besoin d'une intervention ?</h2>
+      <p style="color:var(--muted);font-size:13px;line-height:1.6;margin-bottom:16px">Décrivez votre problème et nous vous répondons rapidement avec un diagnostic et une estimation.</p>
+      <div class="kvi"><div class="kv-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.07 3.18 2 2 0 012 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div><div><span class="kk">Téléphone</span><a class="kv2 tel" href="tel:+15798860202">1 (579) 886-0202</a></div></div>
+      <div class="kvi"><div class="kv-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div><div><span class="kk">Courriel</span><a class="kv2" href="mailto:mstoiture@gmail.com">mstoiture@gmail.com</a></div></div>
+      <div class="kvi"><div class="kv-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><div><span class="kk">Disponibilité</span><span class="kv2">Lun–Sam · Urgences 7j/7</span></div></div>
+      <div style="height:10px"></div>
+      <a class="btn primary full" href="contact.html">Demander une soumission gratuite</a>
+      <a class="btn full" href="tel:+15798860202">Appeler maintenant</a>
+    </div>
 
-      </div>
-    </div>
-  </section>
+  </div>
+</div>
+```
 
-  <!-- Aperçu réalisations -->
-  <section class="section" style="padding-top:0">
-    <div class="wrap">
-      <span class="slabel">Nos réalisations</span>
-      <h2 class="section" style="padding:0;margin-bottom:8px">Quelques travaux récents</h2>
-      <p class="sdesc">Bardeaux, acier, membrane, déneigement — <a href="realisations.html" style="color:var(--blue2)">voir toute la galerie →</a></p>
-      <div class="photo-grid">
-        <div class="photo-box"><img src="reparation_toiture_couvreur_.jpeg" alt="Bardeaux d'asphalte" loading="lazy"><div class="photo-cap">Bardeaux d'asphalte</div></div>
-        <div class="photo-box"><img src="deneigement accueil.jpg" alt="Déneigement toiture" loading="lazy"><div class="photo-cap">Déneigement de toiture</div></div>
-        <div class="photo-box"><img src="toit-tole-quebec-768x512.jpeg" alt="Toiture acier métal" loading="lazy"><div class="photo-cap">Toiture en acier</div></div>
-      </div>
-      <div style="text-align:center;margin-top:18px">
-        <a class="btn" href="realisations.html">Voir toutes les réalisations →</a>
-      </div>
-    </div>
-  </section>
+  </section>
+
+  <!-- Aperçu réalisations -->
+
+  <section class="section" style="padding-top:0">
+    <div class="wrap">
+      <span class="slabel">Nos réalisations</span>
+      <h2 class="section" style="padding:0;margin-bottom:8px">Quelques travaux récents</h2>
+      <p class="sdesc">Bardeaux, acier, membrane, déneigement — <a href="realisations.html" style="color:var(--blue2)">voir toute la galerie →</a></p>
+      <div class="photo-grid">
+        <div class="photo-box"><img src="reparation_toiture_couvreur_.jpeg" alt="Bardeaux d'asphalte" loading="lazy"><div class="photo-cap">Bardeaux d'asphalte</div></div>
+        <div class="photo-box"><img src="deneigement accueil.jpg" alt="Déneigement toiture" loading="lazy"><div class="photo-cap">Déneigement de toiture</div></div>
+        <div class="photo-box"><img src="toit-tole-quebec-768x512.jpeg" alt="Toiture acier métal" loading="lazy"><div class="photo-cap">Toiture en acier</div></div>
+      </div>
+      <div style="text-align:center;margin-top:18px">
+        <a class="btn" href="realisations.html">Voir toutes les réalisations →</a>
+      </div>
+    </div>
+  </section>
 </main>
 
 <script src="nav.js"></script>
+
 </body>
 </html>
