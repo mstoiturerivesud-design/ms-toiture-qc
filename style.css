@@ -308,3 +308,34 @@ html, body {
   }
 
 }
+/* ── CACHE LE MENU SUR MOBILE (déjà présent mais incomplet) ── */
+@media (max-width: 768px) {
+  .menu {
+    display: none !important;
+  }
+
+  /* ── CARTE DROITE EN DESSOUS SUR MOBILE ── */
+  .hero {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 20px !important;
+  }
+
+  .hero > div,
+  .hero-card,
+  .side-card,
+  [class*="contact"] {
+    position: static !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    transform: none !important;
+    right: auto !important;
+    left: auto !important;
+    top: auto !important;
+  }
+
+  /* ── EMPÊCHE TOUT DÉBORDEMENT ── */
+  .wrap {
+    overflow: hidden;
+  }
+}
