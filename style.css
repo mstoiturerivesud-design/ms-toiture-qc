@@ -309,7 +309,7 @@ html, body {
 
 }
 /* ── CACHE LE MENU SUR MOBILE (déjà présent mais incomplet) ── */
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .menu {
     display: none !important;
   }
