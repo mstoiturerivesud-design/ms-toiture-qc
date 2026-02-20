@@ -482,3 +482,37 @@ document.getElementById('qForm').addEventListener('submit', function(e) {
 </script>
 </body>
 </html>
+/* ── BOUTON HAMBURGER ── */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 8px;
+  background: none;
+  border: none;
+}
+.hamburger span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--text);
+  border-radius: 2px;
+}
+
+@media (max-width: 768px) {
+  .hamburger { display: flex; }
+  .menu {
+    display: none !important;
+    position: fixed;
+    top: 70px;
+    left: 0; right: 0;
+    background: rgba(10,22,40,.98);
+    flex-direction: column;
+    padding: 16px;
+    border-bottom: 1px solid var(--line);
+    z-index: 99;
+  }
+  .menu.open { display: flex !important; }
+  .menu a { font-size: 16px; padding: 12px; }
+}
