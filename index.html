@@ -3,110 +3,115 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>MS Toiture | Toiture & Déneigement | Brossard, QC</title>
-<meta name="description" content="MS Toiture à Brossard — réparation, inspection, entretien et déneigement de toiture sur la Rive-Sud. 1 (579) 886-0202."/>
+<title>Réalisations — MS Toiture | Brossard, QC</title>
+<meta name="description" content="Galerie de réalisations MS Toiture : bardeaux, acier, membrane, déneigement sur la Rive-Sud de Montréal."/>
 <link rel="stylesheet" href="style.css"/>
+<style>
+.filter-bar { display:flex; gap:9px; flex-wrap:wrap; margin-bottom:24px; }
+.filter-btn {
+  padding:7px 16px; border-radius:999px; border:1px solid var(--line);
+  background:rgba(255,255,255,.05); color:var(--muted);
+  font-family:'DM Sans',sans-serif; font-size:13px; font-weight:600;
+  cursor:pointer; transition:all .18s;
+}
+.filter-btn:hover, .filter-btn.on { background:rgba(42,109,217,.15); border-color:rgba(42,109,217,.4); color:var(--blue2); }
+.photo-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; }
+@media(max-width:860px){.photo-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:480px){.photo-grid{grid-template-columns:1fr}}
+.photo-box { border-radius:15px; overflow:hidden; position:relative; aspect-ratio:4/3; background:var(--card); border:1px solid var(--line); }
+.photo-box img { width:100%; height:100%; object-fit:cover; display:block; transition:transform .4s; }
+.photo-box:hover img { transform:scale(1.05); }
+.photo-cap { position:absolute; bottom:0; left:0; right:0; background:linear-gradient(to top,rgba(10,22,40,.9),transparent); padding:20px 14px 12px; font-size:13px; font-weight:600; }
+.photo-tag { position:absolute; top:10px; left:10px; background:rgba(10,22,40,.75); border:1px solid var(--line); padding:3px 10px; border-radius:999px; font-size:11px; font-weight:600; color:var(--muted); backdrop-filter:blur(6px); }
+.hidden { display:none; }
+</style>
 </head>
-<body data-page="index">
+<body data-page="realisations">
 
 <main>
-  <section class="section" style="padding-top:64px">
+  <section class="section">
     <div class="wrap">
-     <div class="hero-layout">
+      <span class="slabel">Portfolio</span>
+      <h1>Nos réalisations</h1>
+      <p class="sdesc">Bardeaux d'asphalte, toiture en acier, membrane, déneigement — exemples de travaux réalisés sur la Rive-Sud de Montréal.</p>
 
+      <div class="filter-bar">
+        <button class="filter-btn on" data-filter="all">Tout afficher</button>
+        <button class="filter-btn" data-filter="bardeau">Bardeaux</button>
+        <button class="filter-btn" data-filter="acier">Acier</button>
+        <button class="filter-btn" data-filter="membrane">Membrane</button>
+        <button class="filter-btn" data-filter="denei">Déneigement</button>
+        <button class="filter-btn" data-filter="reparation">Réparation</button>
+      </div>
 
-        <div>
-          <div class="hero-tag">Brossard & Rive-Sud · Urgences acceptées</div>
-          <h1 class="section" style="padding:0;font-size:44px;margin-bottom:14px">
-            Experts en toiture<br><em>depuis des années</em>
-          </h1>
-          <p class="sdesc">Réparation, inspection, entretien et déneigement de toiture sur la Rive-Sud de Montréal. Intervention rapide, diagnostic précis et travail soigné.</p>
-          <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:28px">
-            <a class="btn primary" href="contact.html">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/></svg>
-              Demander une soumission gratuite
-            </a>
-            <a class="btn blue" href="tel:+15798860202">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.07 3.18 2 2 0 012 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-              1 (579) 886-0202
-            </a>
-          </div>
-
-          <div class="stats">
-            <div class="stat"><span class="stat-n">100%</span><span class="stat-l">Satisfaction client</span></div>
-            <div class="stat"><span class="stat-n">RRQ ✓</span><span class="stat-l">Entreprise enregistrée</span></div>
-            <div class="stat"><span class="stat-n">7J/7</span><span class="stat-l">Urgences acceptées</span></div>
-          </div>
-
-          <!-- Mini cards services -->
-         <div class="hero-layout">
-            <a href="services.html" class="panel" style="text-decoration:none;padding:14px">
-              <div class="panel-icon" style="width:34px;height:34px;border-radius:9px;margin-bottom:9px">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:17px;height:17px;color:var(--blue2)"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
-              </div>
-              <h3 style="font-size:13px;margin-bottom:3px">Réparation</h3>
-              <p style="font-size:12px;color:var(--muted)">Fuite, infiltration, solins</p>
-            </a>
-            <a href="services.html#denei" class="panel" style="text-decoration:none;padding:14px">
-              <div class="panel-icon" style="width:34px;height:34px;border-radius:9px;margin-bottom:9px;background:rgba(100,180,255,.12);border-color:rgba(100,180,255,.22)">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:17px;height:17px;color:#7dd3fc"><line x1="12" y1="2" x2="12" y2="22"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
-              </div>
-              <h3 style="font-size:13px;margin-bottom:3px">Déneigement ❄</h3>
-              <p style="font-size:12px;color:var(--muted)">Toitures plates et en pente</p>
-            </a>
-            <a href="services.html#acier" class="panel" style="text-decoration:none;padding:14px">
-              <div class="panel-icon" style="width:34px;height:34px;border-radius:9px;margin-bottom:9px">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:17px;height:17px;color:var(--blue2)"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-              </div>
-              <h3 style="font-size:13px;margin-bottom:3px">Toiture acier</h3>
-              <p style="font-size:12px;color:var(--muted)">Installation & remplacement</p>
-            </a>
-          </div>
+      <div class="photo-grid" id="gallery">
+        <div class="photo-box" data-cat="bardeau">
+          <span class="photo-tag">Bardeaux</span>
+          <img src="https://images.unsplash.com/photo-1632207691143-643e2a9a9361?w=800&q=80" alt="Bardeaux d'asphalte résidentiel" loading="lazy">
+          <div class="photo-cap">Bardeaux d'asphalte architecturaux</div>
         </div>
-
-        <!-- Panel contact rapide -->
-        <div class="panel" style="position:sticky;top:82px">
-          <h2 style="font-family:'Syne',sans-serif;font-size:19px;margin-bottom:6px">Besoin d'une intervention ?</h2>
-          <p style="color:var(--muted);font-size:13px;line-height:1.6;margin-bottom:16px">Décrivez votre problème et nous vous répondons rapidement avec un diagnostic et une estimation.</p>
-          <div class="kvi"><div class="kv-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.07 3.18 2 2 0 012 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div><div><span class="kk">Téléphone</span><a class="kv2 tel" href="tel:+15798860202">1 (579) 886-0202</a></div></div>
-          <div class="kvi"><div class="kv-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div><div><span class="kk">Courriel</span><a class="kv2" href="mailto:mstoiture@gmail.com">mstoiture@gmail.com</a></div></div>
-          <div class="kvi"><div class="kv-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><div><span class="kk">Disponibilité</span><span class="kv2">Lun–Sam · Urgences 7j/7</span></div></div>
-          <div style="height:10px"></div>
-          <a class="btn primary full" href="contact.html">Demander une soumission gratuite</a>
-          <a class="btn full" href="tel:+15798860202">Appeler maintenant</a>
+        <div class="photo-box" data-cat="denei">
+          <span class="photo-tag">Déneigement</span>
+          <img src="https://images.unsplash.com/photo-1518780664697-55e3ad937233?w=800&q=80" alt="Toiture enneigée déneigement" loading="lazy">
+          <div class="photo-cap">Déneigement résidentiel</div>
         </div>
+        <div class="photo-box" data-cat="acier">
+          <span class="photo-tag">Acier</span>
+          <img src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=800&q=80" alt="Toiture en acier métal" loading="lazy">
+          <div class="photo-cap">Toiture en acier profilé</div>
+        </div>
+        <div class="photo-box" data-cat="reparation">
+          <span class="photo-tag">Réparation</span>
+          <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80" alt="Réparation toiture résidentielle" loading="lazy">
+          <div class="photo-cap">Réparation d'infiltration</div>
+        </div>
+        <div class="photo-box" data-cat="reparation">
+          <span class="photo-tag">Travaux</span>
+          <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80" alt="Couvreur professionnel" loading="lazy">
+          <div class="photo-cap">Intervention professionnelle</div>
+        </div>
+        <div class="photo-box" data-cat="membrane">
+          <span class="photo-tag">Membrane</span>
+          <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80" alt="Membrane bicouche toiture plate" loading="lazy">
+          <div class="photo-cap">Membrane &amp; étanchéité</div>
+        </div>
+        <div class="photo-box" data-cat="bardeau">
+          <span class="photo-tag">Bardeaux</span>
+          <img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=800&q=80" alt="Maison toiture bardeaux" loading="lazy">
+          <div class="photo-cap">Remplacement complet de bardeaux</div>
+        </div>
+        <div class="photo-box" data-cat="denei">
+          <span class="photo-tag">Déneigement</span>
+          <img src="https://images.unsplash.com/photo-1547036967-23d11aacaee0?w=800&q=80" alt="Maison hiver neige toiture" loading="lazy">
+          <div class="photo-cap">Toiture après tempête de neige</div>
+        </div>
+        <div class="photo-box" data-cat="acier">
+          <span class="photo-tag">Acier</span>
+          <img src="https://images.unsplash.com/photo-1541123437800-1bb1317badc2?w=800&q=80" alt="Bâtiment toiture acier" loading="lazy">
+          <div class="photo-cap">Toiture acier résidentielle</div>
+        </div>
+      </div>
 
-      </div>
-    </div>
-  </section>
-
-  <!-- Aperçu réalisations -->
-  <section class="section" style="padding-top:0">
-    <div class="wrap">
-      <span class="slabel">Nos réalisations</span>
-      <h2 class="section" style="padding:0;margin-bottom:8px">Quelques travaux récents</h2>
-      <p class="sdesc">Bardeaux, acier, membrane, déneigement — <a href="realisations.html" style="color:var(--blue2)">voir toute la galerie →</a></p>
-      <div class="photo-grid">
-        <div class="photo-box"><img src="reparation_toiture_couvreur_.jpeg" alt="Bardeaux d'asphalte" loading="lazy"><div class="photo-cap">Bardeaux d'asphalte</div></div>
-        <div class="photo-box"><img src="deneigement accueil.jpg" alt="Déneigement toiture" loading="lazy"><div class="photo-cap">Déneigement de toiture</div></div>
-        <div class="photo-box"><img src="toit-tole-quebec-768x512.jpeg" alt="Toiture acier métal" loading="lazy"><div class="photo-cap">Toiture en acier</div></div>
-      </div>
-      <div style="text-align:center;margin-top:18px">
-        <a class="btn" href="realisations.html">Voir toutes les réalisations →</a>
-      </div>
+      <p style="text-align:center;color:var(--muted);font-size:13px;margin-top:20px">
+        Vous souhaitez voir des photos de votre type de toiture ?
+        <a href="contact.html" style="color:var(--blue2)">Contactez-nous →</a>
+      </p>
     </div>
   </section>
 </main>
 
 <script src="nav.js"></script>
+<script>
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('on'));
+    btn.classList.add('on');
+    const f = btn.dataset.filter;
+    document.querySelectorAll('#gallery .photo-box').forEach(box => {
+      box.classList.toggle('hidden', f !== 'all' && box.dataset.cat !== f);
+    });
+  });
+});
+</script>
 </body>
 </html>
-@media (max-width: 768px) {
-  .section > .wrap > div[style*="grid-template-columns"] {
-    display: flex !important;
-    flex-direction: column !important;
-  }
-  .section > .wrap > div > .panel {
-    position: static !important;
-  }
-}
