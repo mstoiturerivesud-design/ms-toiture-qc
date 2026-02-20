@@ -247,3 +247,25 @@ body::before {
 .form-success p { color: var(--muted); font-size: 13px; }
 
 @media(max-width:640px) { .menu { display: none; } .section { padding: 34px 0; } }
+/* ===== FIX MOBILE HERO ===== */
+@media (max-width: 900px) {
+
+  .hero {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  .hero > div {
+    width: 100% !important;
+  }
+
+  /* bloc contact à droite */
+  .hero-card,
+  .contact-card,
+  .side-card {
+    position: static !important;
+    width: 100% !important;
+    margin-top: 20px !important;
+  }
+
+}
