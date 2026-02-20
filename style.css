@@ -482,7 +482,7 @@ document.getElementById('qForm').addEventListener('submit', function(e) {
 </script>
 </body>
 </html>
-/* ── BOUTON HAMBURGER ── */
+/* ── HAMBURGER ── */
 .hamburger {
   display: none;
   flex-direction: column;
@@ -491,6 +491,7 @@ document.getElementById('qForm').addEventListener('submit', function(e) {
   padding: 8px;
   background: none;
   border: none;
+  flex-shrink: 0;
 }
 .hamburger span {
   display: block;
@@ -500,6 +501,24 @@ document.getElementById('qForm').addEventListener('submit', function(e) {
   border-radius: 2px;
 }
 
+@media (max-width: 768px) {
+  .hamburger { display: flex; }
+  .nav-cta .btn:not(.primary) { display: none; }
+  .nav-cta .btn.primary { display: none; }
+  .menu {
+    display: none !important;
+    position: fixed;
+    top: 70px;
+    left: 0; right: 0;
+    background: rgba(10,22,40,.98);
+    flex-direction: column;
+    padding: 16px;
+    border-bottom: 1px solid var(--line);
+    z-index: 99;
+  }
+  .menu.open { display: flex !important; }
+  .menu a { font-size: 16px; padding: 12px; }
+}
 @media (max-width: 768px) {
   .hamburger { display: flex; }
   .menu {
