@@ -269,3 +269,42 @@ body::before {
   }
 
 }
+/* ===== RESPONSIVE MOBILE FIX ===== */
+
+html, body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+@media (max-width: 900px) {
+
+  /* Hero en 1 colonne */
+  .hero {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 20px !important;
+  }
+
+  /* Carte de droite */
+  .hero > div:last-child {
+    width: 100% !important;
+    max-width: 100% !important;
+    position: static !important;
+  }
+
+  /* Empêche les débordements */
+  section, div, header, main {
+    max-width: 100% !important;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+}
