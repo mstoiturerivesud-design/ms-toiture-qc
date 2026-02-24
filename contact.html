@@ -23,7 +23,7 @@
         <div class="panel">
           <h2 style="font-family:'Syne',sans-serif;font-size:20px;margin-bottom:18px">Coordonnées</h2>
           <div class="kvi"><div class="kv-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.07 3.18 2 2 0 012 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div><div><span class="kk">Téléphone</span><a class="kv2 tel" href="tel:+15798860202">1 (579) 886-0202</a></div></div>
-          <div class="kvi"><div class="kv-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div><div><span class="kk">Courriel</span><a class="kv2" href="mailto:mstoiture@gmail.com">mstoiture@gmail.com</a></div></div>
+          <div class="kvi"><div class="kv-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div><div><span class="kk">Courriel</span><a class="kv2" href="mailto:mstoiture.rivesud@gmail.com">mstoiture.rivesud@gmail.com</a></div></div>
           <div class="kvi"><div class="kv-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div><div><span class="kk">Adresse</span><span class="kv2">6185 Taschereau Blvd Ste 118 #630<br>Brossard, QC J4Z 0E4</span></div></div>
           <div class="kvi"><div class="kv-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg></div><div><span class="kk">NEQ</span><span class="kv2">2281489999</span></div></div>
           <div class="kvi"><div class="kv-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><div><span class="kk">Horaires</span><span class="kv2">Lun–Sam · Urgences 7j/7</span></div></div>
@@ -45,7 +45,13 @@
           <h2 style="font-family:'Syne',sans-serif;font-size:20px;margin-bottom:5px">Formulaire de soumission</h2>
           <p style="color:var(--muted);font-size:13px;margin-bottom:18px">Complétez ce formulaire et nous vous recontacterons rapidement.</p>
 
-          <form id="qForm">
+          <form action="https://formsubmit.co/mstoiture.rivesud@gmail.com" method="POST">
+            <!-- Configuration FormSubmit -->
+            <input type="hidden" name="_subject" value="Nouvelle soumission — MS Toiture">
+            <input type="hidden" name="_captcha" value="true">
+            <input type="hidden" name="_template" value="box">
+            <input type="hidden" name="_next" value="https://ms-toiture-qc.vercel.app/contact.html#ok">
+            <input type="text" name="_honey" style="display:none">
             <div class="fcols">
               <div class="frow">
                 <label for="fn">Prénom et nom *</label>
@@ -94,13 +100,13 @@
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
               Envoyer la demande
             </button>
-            <p class="fnote">Ce formulaire ouvre votre application de messagerie vers <strong>mstoiture@gmail.com</strong>. Vous pouvez aussi appeler le <a href="tel:+15798860202">1 (579) 886-0202</a>.</p>
+            <p class="fnote">Votre demande sera envoyée directement à notre équipe. Nous vous répondrons dans les plus brefs délais. Vous pouvez aussi appeler le <a href="tel:+15798860202">1 (579) 886-0202</a>.</p>
           </form>
 
           <div class="form-success" id="ok">
             <div class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
             <h3>Demande envoyée !</h3>
-            <p>Votre messagerie s'est ouverte avec le courriel pré-rempli. Vérifiez votre application email pour compléter l'envoi.</p>
+            <p>Votre demande a été transmise à notre équipe. Nous vous recontacterons dans les plus brefs délais.</p>
           </div>
         </div>
 
@@ -110,34 +116,5 @@
 </main>
 
 <script src="nav.js"></script>
-<script>
-document.getElementById('qForm').addEventListener('submit', function(e) {
-  e.preventDefault();
-  var name    = document.getElementById('fn').value.trim();
-  var phone   = document.getElementById('fp').value.trim();
-  var city    = document.getElementById('fc').value.trim();
-  var service = document.getElementById('ft').value;
-  var urgence = document.getElementById('fu').value;
-  var msg     = document.getElementById('fm').value.trim();
-
-  var subject = 'Demande de soumission – ' + service + ' – ' + city + ' – ' + name;
-  var body =
-    'Nom : ' + name + '%0D%0A' +
-    'Téléphone : ' + phone + '%0D%0A' +
-    'Ville : ' + city + '%0D%0A' +
-    'Service demandé : ' + service + '%0D%0A' +
-    "Degré d'urgence : " + urgence + '%0D%0A%0D%0A' +
-    'Description :%0D%0A' + encodeURIComponent(msg) + '%0D%0A%0D%0A' +
-    '----%0D%0AEnvoyé depuis le site MS Toiture';
-
-  window.location.href =
-    'mailto:mstoiture@gmail.com' +
-    '?subject=' + encodeURIComponent(subject) +
-    '&body=' + body;
-
-  document.getElementById('qForm').style.display = 'none';
-  document.getElementById('ok').style.display = 'block';
-});
-</script>
 </body>
 </html>
