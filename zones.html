@@ -19,6 +19,8 @@
 .zone-card h3 { font-family:'Syne',sans-serif; font-size:16px; margin-bottom:5px; }
 .zone-card p { color:var(--muted); font-size:13px; line-height:1.5; }
 .zone-icon { font-size:24px; margin-bottom:10px; display:block; }
+.zone-cta-grid { display:grid; grid-template-columns:1fr 1fr; gap:20px; align-items:center; }
+@media(max-width:700px){.zone-cta-grid{grid-template-columns:1fr}}
 .map-placeholder {
   background:var(--card); border:1px solid var(--line);
   border-radius:var(--r); padding:32px; text-align:center;
@@ -92,7 +94,7 @@
         </p>
       </div>
 
-      <div style="background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:26px;display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:center">
+      <div class="zone-cta-grid" style="background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:26px">
         <div>
           <h3 style="font-family:'Syne',sans-serif;font-size:18px;margin-bottom:8px">Votre secteur n'est pas listé ?</h3>
           <p style="color:var(--muted);font-size:14px;line-height:1.7;margin-bottom:16px">Contactez-nous et nous vous confirmons notre disponibilité. Nous faisons toujours de notre mieux pour accommoder les demandes urgentes.</p>
