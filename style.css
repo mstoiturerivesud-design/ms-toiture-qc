@@ -246,6 +246,10 @@ body::before {
 .form-success h3 { font-family: 'Syne', sans-serif; font-size: 19px; margin-bottom: 7px; }
 .form-success p { color: var(--muted); font-size: 13px; }
 
+/* ── CONTACT LAYOUT ── */
+.contact-layout { display: grid; grid-template-columns: 1fr 1.4fr; gap: 16px; }
+@media(max-width:760px) { .contact-layout { grid-template-columns: 1fr; } }
+
 @media(max-width:640px) { .menu { display: none; } .section { padding: 34px 0; } }
 /* ===== FIX MOBILE HERO ===== */
 @media (max-width: 900px) {

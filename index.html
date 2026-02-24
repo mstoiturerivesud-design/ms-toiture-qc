@@ -7,7 +7,6 @@
   <meta name="description" content="MS Toiture à Brossard (Rive-Sud) : inspection, réparation, entretien, urgence fuite, déneigement de toiture. Devis rapide, travail propre." />
   <link rel="stylesheet" href="style.css" />
 
-  <!-- Petit style local pour la HERO (car ton CSS global n'inclut pas toutes les classes hero) -->
   <style>
     .hero{ padding: 56px 0; }
     .hero-grid{ display:grid; grid-template-columns: 1.2fr .8fr; gap: 18px; align-items:start; }
@@ -30,7 +29,6 @@
     @media(max-width:900px){ .hero-grid{ grid-template-columns: 1fr; } .hero-title{ font-size: 34px; } }
   </style>
 
-  <!-- SEO Local (tu peux laisser) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -48,45 +46,7 @@
   </script>
 </head>
 
-<body>
-  <!-- TOP BAR -->
-  <header class="topbar">
-    <div class="wrap">
-      <div class="nav">
-        <a class="brand" href="index.html">
-          <div class="brand-logo" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none">
-              <path d="M3 11.5L12 4l9 7.5V20a1.5 1.5 0 0 1-1.5 1.5H4.5A1.5 1.5 0 0 1 3 20v-8.5Z" stroke="white" stroke-width="1.8"/>
-              <path d="M9 21V12h6v9" stroke="white" stroke-width="1.8" stroke-linecap="round"/>
-            </svg>
-          </div>
-          <div>
-            <strong>MS Toiture</strong>
-            <span>Brossard • Rive-Sud de Montréal</span>
-          </div>
-        </a>
-
-        <nav class="menu" aria-label="Menu principal">
-          <a class="active" href="index.html">Accueil</a>
-          <a href="#services">Services</a>
-          <a href="#realisations">Réalisations</a>
-          <a href="#devis">Devis</a>
-          <a href="#contact">Contact</a>
-        </nav>
-
-        <div class="nav-cta">
-          <a class="btn" href="#devis">
-            <svg viewBox="0 0 24 24" fill="none"><path d="M7 7h10M7 12h10M7 17h7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-            Devis rapide
-          </a>
-          <a class="btn primary" href="tel:+15798860202">
-            <svg viewBox="0 0 24 24" fill="none"><path d="M22 16.9v3a2 2 0 0 1-2.2 2c-9.5-.9-17-8.4-18-18A2 2 0 0 1 3.1 1h3a2 2 0 0 1 2 1.7c.2 1.4.6 2.8 1.2 4a2 2 0 0 1-.5 2.1L7.6 10c1.6 3 4 5.4 7 7l1.2-1.2a2 2 0 0 1 2.1-.5c1.2.6 2.6 1 4 .2a2 2 0 0 1 1.7 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            Appeler
-          </a>
-        </div>
-      </div>
-    </div>
-  </header>
+<body data-page="index">
 
   <!-- HERO -->
   <main class="hero">
@@ -97,7 +57,7 @@
           <h1 class="hero-title">Toiture & réparation sur la <em>Rive-Sud</em></h1>
           <p class="hero-sub">
             Inspection, réparation ciblée, entretien et petites urgences (infiltration, bardeaux endommagés,
-            solins, ventilation). On te dit ce qui est vraiment nécessaire, photos à l’appui.
+            solins, ventilation). On vous dit ce qui est vraiment nécessaire, photos à l'appui.
           </p>
 
           <div class="stats">
@@ -116,11 +76,11 @@
           </div>
 
           <div class="hero-actions">
-            <a class="btn primary" href="#devis">
+            <a class="btn primary" href="contact.html">
               <svg viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
               Demander un devis
             </a>
-            <a class="btn blue" href="#services">
+            <a class="btn blue" href="services.html">
               <svg viewBox="0 0 24 24" fill="none"><path d="M4 12h16M14 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
               Voir les services
             </a>
@@ -137,37 +97,37 @@
             <span class="pill">Déneigement toiture</span>
           </div>
 
-          <div class="badge-24" title="Service d’urgence">
+          <div class="badge-24" title="Service d'urgence">
             <svg viewBox="0 0 24 24" fill="none"><path d="M12 6v6l4 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" stroke="currentColor" stroke-width="2"/></svg>
             Urgence fuite : appel direct
           </div>
 
-          <!-- 3 photos (tu peux remplacer les src par tes fichiers GitHub) -->
-          <div class="home-photos" id="realisations">
+          <!-- Photos de réalisations -->
+          <div class="home-photos">
             <div class="slabel">Aperçu</div>
             <div class="photo-grid">
               <div class="photo-box">
-                <img src="images/real1.jpg" alt="Réparation toiture - MS Toiture">
+                <img src="reparation_toiture_couvreur_.jpeg" alt="Réparation toiture - MS Toiture">
                 <div class="photo-cap">Réparation ciblée</div>
               </div>
               <div class="photo-box">
-                <img src="images/real2.jpg" alt="Solins et étanchéité - MS Toiture">
+                <img src="elastomere.png" alt="Membrane élastomère - MS Toiture">
                 <div class="photo-cap">Solins & étanchéité</div>
               </div>
               <div class="photo-box">
-                <img src="images/real3.jpg" alt="Inspection toiture - MS Toiture">
-                <div class="photo-cap">Inspection + photos</div>
+                <img src="deneigement-toit-entreprise-trois-rivieres-maison.jpg.webp" alt="Déneigement toiture - MS Toiture">
+                <div class="photo-cap">Déneigement hivernal</div>
               </div>
             </div>
           </div>
         </div>
 
         <!-- CARTE DROITE -->
-        <aside class="hero-card side-card" id="contact">
+        <aside class="hero-card side-card">
           <span class="slabel">Contact</span>
           <h2 style="margin-bottom:10px;">Réponse rapide</h2>
           <p class="sdesc" style="margin-bottom:16px;">
-            Dis-moi ce que tu constates (fuite, bardeaux, solin, ventilation). Je te réponds vite avec une solution claire.
+            Dites-nous ce que vous constatez (fuite, bardeaux, solin, ventilation). Nous vous répondons vite avec une solution claire.
           </p>
 
           <div class="kvi">
@@ -177,6 +137,16 @@
             <div>
               <span class="kk">Téléphone</span>
               <span class="kv2"><a class="tel" href="tel:+15798860202">1 (579) 886-0202</a></span>
+            </div>
+          </div>
+
+          <div class="kvi">
+            <div class="kv-ic" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="currentColor" stroke-width="2"/><polyline points="22,6 12,13 2,6" stroke="currentColor" stroke-width="2"/></svg>
+            </div>
+            <div>
+              <span class="kk">Courriel</span>
+              <span class="kv2"><a href="mailto:mstoiture@gmail.com">mstoiture@gmail.com</a></span>
             </div>
           </div>
 
@@ -194,12 +164,12 @@
 
           <div class="urg-box">
             <span class="urg-label">Urgence fuite</span>
-            <p>Si l’eau entre : protège l’intérieur (seau/bâche), et appelle. On te guide tout de suite.</p>
+            <p>Si l'eau entre : protégez l'intérieur (seau/bâche), et appelez. On vous guide tout de suite.</p>
           </div>
 
           <div class="divider"></div>
 
-          <a class="btn primary full" href="#devis">
+          <a class="btn primary full" href="contact.html">
             <svg viewBox="0 0 24 24" fill="none"><path d="M7 7h10M7 12h10M7 17h7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
             Demander un devis
           </a>
@@ -207,20 +177,16 @@
             <svg viewBox="0 0 24 24" fill="none"><path d="M22 16.9v3a2 2 0 0 1-2.2 2c-9.5-.9-17-8.4-18-18A2 2 0 0 1 3.1 1h3a2 2 0 0 1 2 1.7c.2 1.4.6 2.8 1.2 4a2 2 0 0 1-.5 2.1L7.6 10c1.6 3 4 5.4 7 7l1.2-1.2a2 2 0 0 1 2.1-.5c1.2.6 2.6 1 4 .2a2 2 0 0 1 1.7 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
             Appeler maintenant
           </a>
-
-          <p class="mini">
-            (Tu peux remplacer le texte, photos, et liens quand tu veux.)
-          </p>
         </aside>
       </div>
     </div>
   </main>
 
-  <!-- SERVICES -->
-  <section class="section" id="services">
+  <!-- SERVICES (aperçu) -->
+  <section class="section">
     <div class="wrap">
       <span class="slabel">Services</span>
-      <h2>Ce que je fais, <em>sans blabla</em></h2>
+      <h2>Ce que nous faisons, <em>sans blabla</em></h2>
       <p class="sdesc">Objectif : régler le problème proprement, expliquer clairement, et éviter que ça revienne.</p>
 
       <div class="grid2">
@@ -230,7 +196,7 @@
           </div>
           <h3>Urgence fuite</h3>
           <ul class="ulist">
-            <li><span class="dot"></span>Mise hors d’eau si possible</li>
+            <li><span class="dot"></span>Mise hors d'eau si possible</li>
             <li><span class="dot"></span>Recherche de cause (photos)</li>
             <li><span class="dot"></span>Réparation immédiate si faisable</li>
           </ul>
@@ -268,131 +234,17 @@
           <ul class="ulist">
             <li><span class="dot"></span>Retrait sécuritaire</li>
             <li><span class="dot"></span>Prévention barrage de glace</li>
-            <li><span class="dot"></span>Protection de l’étanchéité</li>
+            <li><span class="dot"></span>Protection de l'étanchéité</li>
           </ul>
         </div>
+      </div>
+
+      <div style="text-align:center;margin-top:24px">
+        <a class="btn blue" href="services.html" style="font-size:15px;padding:13px 28px">Voir tous les services →</a>
       </div>
     </div>
   </section>
 
-  <!-- DEVIS -->
-  <section class="section" id="devis">
-    <div class="wrap">
-      <span class="slabel">Devis</span>
-      <h2>Demande de <em>soumission</em></h2>
-      <p class="sdesc">Réponse rapide. Décris le souci, ajoute l’adresse et si tu peux, une photo.</p>
-
-      <div class="grid2">
-        <div class="panel">
-          <h3 style="margin-bottom:12px;">Formulaire rapide</h3>
-
-          <form action="#" method="post" onsubmit="return false;">
-            <div class="fcols">
-              <div class="frow">
-                <label>Nom</label>
-                <input type="text" placeholder="Ton nom" />
-              </div>
-              <div class="frow">
-                <label>Téléphone</label>
-                <input type="tel" placeholder="Ex : 514 000 0000" />
-              </div>
-            </div>
-
-            <div class="fcols">
-              <div class="frow">
-                <label>Ville / secteur</label>
-                <input type="text" placeholder="Brossard, Longueuil, St-Lambert..." />
-              </div>
-              <div class="frow">
-                <label>Type de demande</label>
-                <select>
-                  <option>Inspection</option>
-                  <option>Urgence fuite</option>
-                  <option>Réparation</option>
-                  <option>Entretien</option>
-                  <option>Déneigement (hiver)</option>
-                </select>
-              </div>
-            </div>
-
-            <div class="frow">
-              <label>Décris le problème</label>
-              <textarea placeholder="Ex : infiltration près de la cheminée, bardeaux arrachés, trace d’humidité..."></textarea>
-            </div>
-
-            <button class="btn primary full" type="submit">
-              Envoyer (demo)
-            </button>
-
-            <div class="fnote">
-              Pour un vrai envoi, je te branche ça sur ton e-mail ou Formspree (gratuit).
-              En attendant tu peux appeler au <a href="tel:+15798860202">1 (579) 886-0202</a>.
-            </div>
-          </form>
-        </div>
-
-        <div class="panel">
-          <h3 style="margin-bottom:10px;">Ce que tu reçois</h3>
-          <ul class="ulist">
-            <li><span class="dot"></span>Une réponse claire (urgent / à prévoir / options)</li>
-            <li><span class="dot"></span>Un prix cohérent selon l’accès + le type de réparation</li>
-            <li><span class="dot"></span>Des conseils pour éviter que ça revienne</li>
-          </ul>
-
-          <div class="divider"></div>
-
-          <h3 style="margin-bottom:10px;">Contact direct</h3>
-          <div class="kvi">
-            <div class="kv-ic" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none"><path d="M22 16.9v3a2 2 0 0 1-2.2 2c-9.5-.9-17-8.4-18-18A2 2 0 0 1 3.1 1h3a2 2 0 0 1 2 1.7c.2 1.4.6 2.8 1.2 4a2 2 0 0 1-.5 2.1L7.6 10c1.6 3 4 5.4 7 7l1.2-1.2a2 2 0 0 1 2.1-.5c1.2.6 2.6 1 4 .2a2 2 0 0 1 1.7 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </div>
-            <div>
-              <span class="kk">Téléphone</span>
-              <span class="kv2"><a class="tel" href="tel:+15798860202">1 (579) 886-0202</a></span>
-            </div>
-          </div>
-
-          <div class="kvi">
-            <div class="kv-ic" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none"><path d="M4 4h16v16H4z" stroke="currentColor" stroke-width="2"/><path d="M8 10h8M8 14h5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-            </div>
-            <div>
-              <span class="kk">Email</span>
-              <span class="kv2">ton-email@exemple.com</span>
-            </div>
-          </div>
-
-          <div class="urg-box">
-            <span class="urg-label">Astuce rapide</span>
-            <p>Si tu peux : envoie une photo du point d’entrée de l’eau + une photo de l’extérieur. Ça fait gagner du temps.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="wrap">
-      <div class="footer-inner">
-        <div>
-          <strong>MS Toiture</strong>
-          <div>© <span id="y"></span> • Brossard, QC • <a href="tel:+15798860202">1 (579) 886-0202</a></div>
-          <div style="margin-top:6px;">Mentions : NEQ (si tu l’as) • Texte & design modifiables</div>
-        </div>
-
-        <div class="flinks">
-          <a href="#services">Services</a>
-          <a href="#realisations">Réalisations</a>
-          <a href="#devis">Devis</a>
-          <a href="#contact">Contact</a>
-        </div>
-      </div>
-    </div>
-  </footer>
-
-  <script>
-    document.getElementById("y").textContent = new Date().getFullYear();
-  </script>
+<script src="nav.js"></script>
 </body>
 </html>
