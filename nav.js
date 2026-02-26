@@ -46,7 +46,7 @@ const FOOTER_HTML = `
         <div>© <span id="yr"></span> MS Toiture — Brossard, QC · NEQ 2281489999</div>
         <div style="margin-top:4px">
           <a href="tel:+15798860202">1 (579) 886-0202</a> ·
-          <a href="mailto:mstoiture@gmail.com">mstoiture@gmail.com</a>
+          <a href="mailto:mstoiture.rivesud@gmail.com">mstoiture.rivesud@gmail.com</a>
         </div>
       </div>
       <div class="flinks">
