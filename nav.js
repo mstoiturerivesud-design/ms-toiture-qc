@@ -6,7 +6,7 @@ const NAV_HTML = `
 <header class="topbar">
   <div class="wrap">
     <div class="nav">
-      <a class="brand" href="index.html"><img src="logo.png" alt="MS Toiture — Couvreur Rive-Sud" style="height:52px;width:52px;border-radius:50%;object-fit:cover;display:block;"/></a>
+      <a class="brand" href="index.html"><img src="logo.png" alt="MS Toiture — Couvreur Rive-Sud" style="height:72px;width:72px;border-radius:50%;object-fit:cover;display:block;"/></a>
       <nav class="menu" aria-label="Navigation">
         <a href="index.html"       data-page="index">Accueil</a>
         <a href="services.html"    data-page="services">Services</a>
