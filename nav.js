@@ -48,6 +48,7 @@ const FOOTER_HTML = `
       </div>
     </div>
   </div>
+  <div style="text-align:center;padding:10px 0 6px"><span class="qc-badge">Fier artisan québécois</span></div>
 </footer>`;
 
 document.addEventListener('DOMContentLoaded', () => {
