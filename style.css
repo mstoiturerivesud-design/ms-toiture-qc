@@ -9,7 +9,7 @@
   --text:   #eef2f9;
   --muted:  #8ea5c8;
   --line:   rgba(100,150,220,.15);
-  --accent: #e8a020;
+  --accent: #C9A227;
   --acc2:   #f0b84a;
   --blue:   #2a6dd9;
   --blue2:  #3d82f0;
@@ -176,6 +176,10 @@ body::before {
 }
 .stat-n { font-family: 'Syne', sans-serif; font-size: 22px; font-weight: 700; color: var(--accent); display: block; }
 .stat-l { font-size: 12px; color: var(--muted); display: block; margin-top: 2px; }
+
+/* ── BADGE QUÉBEC ── */
+.qc-badge { display:inline-flex; align-items:center; gap:6px; background:rgba(0,57,179,.15); border:1px solid rgba(0,57,179,.3); padding:4px 14px; border-radius:999px; font-size:12px; font-weight:700; color:#6A9FF0; letter-spacing:.3px; }
+.qc-badge::before { content:"⚜"; color:#C9A227; margin-right:2px; }
 
 /* ── FOOTER ── */
 .footer {
