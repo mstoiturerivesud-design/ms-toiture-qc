@@ -6,18 +6,7 @@ const NAV_HTML = `
 <header class="topbar">
   <div class="wrap">
     <div class="nav">
-      <a class="brand" href="index.html">
-        <div class="brand-logo">
-          <svg viewBox="0 0 32 32" fill="none">
-            <path d="M4 14L16 4L28 14V28H20V20H12V28H4V14Z" fill="white" fill-opacity=".92"/>
-            <rect x="13" y="20" width="6" height="8" rx="1" fill="#2a6dd9" fill-opacity=".85"/>
-          </svg>
-        </div>
-        <div>
-          <strong>MS Toiture</strong>
-          <span>Brossard, QC · Rive-Sud</span>
-        </div>
-      </a>
+      <a class="brand" href="index.html"><img src="logo.png" alt="MS Toiture — Couvreur Rive-Sud" style="height:48px;width:auto;display:block;"/></a>
       <nav class="menu" aria-label="Navigation">
         <a href="index.html"       data-page="index">Accueil</a>
         <a href="services.html"    data-page="services">Services</a>
