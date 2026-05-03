@@ -65,6 +65,10 @@
           <p style="color:var(--muted);font-size:13px;margin-bottom:18px">Complétez ce formulaire et nous vous recontacterons rapidement.</p>
 
           <form id="qForm">
+            <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+            <input type="hidden" name="_subject" value="Nouvelle demande de soumission - MS Toiture">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_captcha" value="false">
             <div class="fcols">
               <div class="frow">
                 <label for="fn">Prénom et nom *</label>
@@ -74,6 +78,10 @@
                 <label for="fp">Téléphone *</label>
                 <input id="fp" name="phone" type="tel" autocomplete="tel" placeholder="514 555-0100" required>
               </div>
+            </div>
+            <div class="frow">
+              <label for="fe">Courriel</label>
+              <input id="fe" name="email" type="email" autocomplete="email" placeholder="nom@email.com">
             </div>
             <div class="fcols">
               <div class="frow">
@@ -113,13 +121,13 @@
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
               Envoyer la demande
             </button>
-            <p class="fnote">Ce formulaire ouvre votre application de messagerie vers <strong>mstoiture.rivesud@gmail.com</strong>. Vous pouvez aussi appeler le <a href="tel:+15798860202">1 (579) 886-0202</a>.</p>
+            <p class="fnote">La demande est envoyée directement à <strong>mstoiture.rivesud@gmail.com</strong>, sans ouvrir l'application courriel du client. Vous pouvez aussi appeler le <a href="tel:+15798860202">1 (579) 886-0202</a>.</p>
           </form>
 
           <div class="form-success" id="ok">
             <div class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
             <h3>Demande envoyée !</h3>
-            <p>Votre messagerie s'est ouverte avec le courriel pré-rempli. Vérifiez votre application email pour compléter l'envoi.</p>
+            <p>Merci. Votre demande a été envoyée à MS Toiture. Nous vous recontacterons rapidement.</p>
           </div>
         </div>
 
@@ -132,30 +140,37 @@
 <script>
 document.getElementById('qForm').addEventListener('submit', function(e) {
   e.preventDefault();
-  var name    = document.getElementById('fn').value.trim();
-  var phone   = document.getElementById('fp').value.trim();
-  var city    = document.getElementById('fc').value.trim();
+  var form = this;
+  var button = form.querySelector('button[type="submit"]');
+  var originalText = button.innerHTML;
+  var data = new FormData(form);
+  var name = document.getElementById('fn').value.trim();
+  var city = document.getElementById('fc').value.trim();
   var service = document.getElementById('ft').value;
-  var urgence = document.getElementById('fu').value;
-  var msg     = document.getElementById('fm').value.trim();
 
-  var subject = 'Demande de soumission – ' + service + ' – ' + city + ' – ' + name;
-  var body =
-    'Nom : ' + name + '%0D%0A' +
-    'Téléphone : ' + phone + '%0D%0A' +
-    'Ville : ' + city + '%0D%0A' +
-    'Service demandé : ' + service + '%0D%0A' +
-    "Degré d'urgence : " + urgence + '%0D%0A%0D%0A' +
-    'Description :%0D%0A' + encodeURIComponent(msg) + '%0D%0A%0D%0A' +
-    '----%0D%0AEnvoyé depuis le site MS Toiture';
+  data.set('_subject', 'Demande de soumission - ' + service + ' - ' + city + ' - ' + name);
 
-  window.location.href =
-    'mailto:mstoiture.rivesud@gmail.com' +
-    '?subject=' + encodeURIComponent(subject) +
-    '&body=' + body;
+  button.disabled = true;
+  button.innerHTML = 'Envoi en cours...';
 
-  document.getElementById('qForm').style.display = 'none';
-  document.getElementById('ok').style.display = 'block';
+  fetch('https://formsubmit.co/ajax/mstoiture.rivesud@gmail.com', {
+    method: 'POST',
+    body: data,
+    headers: { 'Accept': 'application/json' }
+  })
+  .then(function(response) {
+    if (!response.ok) throw new Error('Erreur envoi');
+    return response.json();
+  })
+  .then(function() {
+    form.style.display = 'none';
+    document.getElementById('ok').style.display = 'block';
+  })
+  .catch(function() {
+    button.disabled = false;
+    button.innerHTML = originalText;
+    alert("Le formulaire n'a pas pu être envoyé. Appelez-nous au 1 (579) 886-0202 ou réessayez dans quelques instants.");
+  });
 });
 </script>
 </body>
