@@ -77,9 +77,24 @@ document.addEventListener('DOMContentLoaded', () => {
     for (let i = 0; i < snowCount; i += 1) {
       const flake = document.createElement('span');
       flake.className = 'snowflake';
+      flake.innerHTML = `
+        <svg viewBox="-16 -16 32 32" aria-hidden="true" focusable="false">
+          <g fill="none" stroke-width="1.45" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M0-14v28"/>
+            <path d="M-12.1-7 12.1 7"/>
+            <path d="M12.1-7-12.1 7"/>
+            <path d="M-3.8-12.3 0-8.8l3.8-3.5"/>
+            <path d="M-3.8 12.3 0 8.8l3.8 3.5"/>
+            <path d="M-12.4-2.7-7.6-1.5-8.8-6.3"/>
+            <path d="M12.4 2.7 7.6 1.5 8.8 6.3"/>
+            <path d="M12.4-2.7 7.6-1.5 8.8-6.3"/>
+            <path d="M-12.4 2.7-7.6 1.5-8.8 6.3"/>
+            <circle cx="0" cy="0" r="1.45"/>
+          </g>
+        </svg>`;
       flake.style.setProperty('--left', `${Math.random() * 100}%`);
-      flake.style.setProperty('--size', `${8 + Math.random() * 12}px`);
-      flake.style.setProperty('--opacity', `${0.22 + Math.random() * 0.42}`);
+      flake.style.setProperty('--size', `${10 + Math.random() * 12}px`);
+      flake.style.setProperty('--opacity', `${0.20 + Math.random() * 0.36}`);
       flake.style.setProperty('--fall', `${12 + Math.random() * 14}s`);
       flake.style.setProperty('--sway', `${2.8 + Math.random() * 4.4}s`);
       flake.style.setProperty('--spin', `${9 + Math.random() * 13}s`);
