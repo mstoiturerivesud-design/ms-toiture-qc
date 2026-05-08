@@ -29,17 +29,6 @@ body::before {
     radial-gradient(ellipse 80% 50% at 10% 0%, rgba(42,109,217,.18) 0%, transparent 60%),
     radial-gradient(ellipse 60% 40% at 90% 100%, rgba(232,160,32,.10) 0%, transparent 60%);
 }
-body::after {
-  content: ''; position: fixed; inset: -120px 0 0; z-index: 0; pointer-events: none;
-  opacity: .30;
-  background-image:
-    url("data:image/svg+xml,%3Csvg width='150' height='150' viewBox='0 0 150 150' xmlns='http://www.w3.org/2000/svg'%3E%3Cg transform='translate(75 75)' fill='none' stroke='rgba(255,255,255,.90)' stroke-width='1.35' stroke-linecap='round'%3E%3Cpath d='M0-10v20M-7-7 7 7M7-7-7 7'/%3E%3Cpath d='M-3-8 0-5l3-3M-3 8l3-3 3 3'/%3E%3C/g%3E%3C/svg%3E"),
-    url("data:image/svg+xml,%3Csvg width='220' height='220' viewBox='0 0 220 220' xmlns='http://www.w3.org/2000/svg'%3E%3Cg transform='translate(110 110)' fill='none' stroke='rgba(255,255,255,.64)' stroke-width='1.1' stroke-linecap='round'%3E%3Cpath d='M0-7v14M-5-5 5 5M5-5-5 5'/%3E%3C/g%3E%3C/svg%3E"),
-    url("data:image/svg+xml,%3Csvg width='310' height='310' viewBox='0 0 310 310' xmlns='http://www.w3.org/2000/svg'%3E%3Cg transform='translate(155 155)' fill='none' stroke='rgba(147,197,253,.55)' stroke-width='1.25' stroke-linecap='round'%3E%3Cpath d='M0-12v24M-8-8 8 8M8-8-8 8'/%3E%3Cpath d='M-4-10 0-7l4-3M-4 10l4-3 4 3'/%3E%3C/g%3E%3C/svg%3E");
-  background-size: 150px 150px, 220px 220px, 310px 310px;
-  background-position: 0 0, 64px -80px, 150px -40px;
-  animation: snowfall 20s linear infinite;
-}
 body > header,
 body > main,
 body > section,
@@ -47,9 +36,39 @@ body > footer {
   position: relative;
   z-index: 1;
 }
-@keyframes snowfall {
-  from { transform: translate3d(0,-80px,0); }
-  to { transform: translate3d(-70px,220px,0); }
+.snow-layer {
+  position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden;
+}
+.snowflake {
+  position: absolute; top: -12vh; left: var(--left);
+  width: var(--size); height: var(--size);
+  opacity: var(--opacity);
+  color: rgba(238,246,255,.88);
+  animation: snow-fall var(--fall) linear infinite;
+  animation-delay: var(--delay);
+  filter: drop-shadow(0 0 5px rgba(147,197,253,.22));
+}
+.snowflake::before {
+  content: "\2744";
+  display: block;
+  font-size: var(--size);
+  line-height: 1;
+  animation:
+    snow-sway var(--sway) ease-in-out infinite alternate,
+    snow-spin var(--spin) linear infinite;
+}
+@keyframes snow-fall {
+  0% { transform: translate3d(0,-12vh,0); }
+  28% { transform: translate3d(calc(var(--drift) * .45),28vh,0); }
+  58% { transform: translate3d(calc(var(--drift) * -.22),58vh,0); }
+  100% { transform: translate3d(var(--drift),112vh,0); }
+}
+@keyframes snow-sway {
+  from { translate: -9px 0; }
+  to { translate: 12px 0; }
+}
+@keyframes snow-spin {
+  to { rotate: 360deg; }
 }
 .wrap { max-width: 1100px; margin: 0 auto; padding: 0 22px; position: relative; }
 
