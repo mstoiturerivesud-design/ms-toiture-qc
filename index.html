@@ -67,7 +67,34 @@
     .signature-stage:hover .sig-photo.side-b{ transform:rotate(-5deg) translateY(5px) translateZ(34px); }
     .signature-pills{ display:flex; gap:10px; flex-wrap:wrap; margin-top:18px; }
     .signature-pills span{ border:1px solid rgba(240,184,74,.26); border-radius:999px; padding:8px 13px; background:rgba(240,184,74,.08); color:var(--acc2); font-weight:700; font-size:13px; }
-    @media(max-width:900px){ .hero-grid,.signature-grid{ grid-template-columns:1fr; } .hero-title{ font-size: 34px; } .signature-title{ font-size:34px; } .signature-stage{ min-height:350px; } }
+    .instant-section{ position:relative; overflow:hidden; background:linear-gradient(180deg, rgba(10,22,40,.98), rgba(19,34,64,.92)); border-top:1px solid var(--line); }
+    .instant-hero{ margin-top:20px; }
+    .instant-card{ position:relative; overflow:hidden; border:1px solid rgba(255,255,255,.14); border-radius:26px; padding:24px; background:rgba(255,255,255,.055); box-shadow:0 24px 54px rgba(0,0,0,.24); }
+    .instant-card::before{ content:""; position:absolute; inset:-1px; background:radial-gradient(circle at 0 0, rgba(240,184,74,.24), transparent 32%), radial-gradient(circle at 100% 0, rgba(61,130,240,.20), transparent 34%); pointer-events:none; }
+    .instant-card > *{ position:relative; z-index:1; }
+    .instant-head{ display:flex; justify-content:space-between; align-items:flex-end; gap:18px; margin-bottom:18px; }
+    .instant-head h2{ font-family:'Syne',sans-serif; font-size:34px; line-height:1.08; }
+    .instant-hero .instant-card{ padding:18px; border-radius:22px; }
+    .instant-hero .instant-head{ display:block; margin-bottom:14px; }
+    .instant-hero .instant-head h2{ font-size:25px; }
+    .instant-hero .instant-grid{ grid-template-columns:1fr; }
+    .instant-hero .instant-options{ grid-template-columns:repeat(2,1fr); }
+    .instant-hero .instant-choice{ min-height:68px; padding:12px; }
+    .instant-hero .instant-result{ padding:16px; }
+    .instant-hero .instant-result h3{ font-size:22px; }
+    .instant-grid{ display:grid; grid-template-columns:1.05fr .95fr; gap:18px; align-items:stretch; }
+    .instant-options{ display:grid; grid-template-columns:repeat(2,1fr); gap:10px; }
+    .instant-choice{ min-height:82px; text-align:left; border:1px solid var(--line); border-radius:18px; padding:14px; background:rgba(10,22,40,.62); color:var(--text); cursor:pointer; transition:all .22s; }
+    .instant-choice strong{ display:block; font-family:'Syne',sans-serif; font-size:16px; margin-bottom:4px; }
+    .instant-choice span{ color:var(--muted); font-size:12px; line-height:1.35; }
+    .instant-choice:hover,.instant-choice.on{ transform:translateY(-2px); border-color:rgba(240,184,74,.46); background:rgba(240,184,74,.10); box-shadow:0 14px 28px rgba(0,0,0,.18); }
+    .instant-result{ border-radius:20px; padding:20px; background:linear-gradient(135deg, rgba(10,22,40,.70), rgba(42,109,217,.12)); border:1px solid rgba(255,255,255,.12); display:flex; flex-direction:column; justify-content:space-between; }
+    .instant-result-label{ color:var(--acc2); font-weight:800; letter-spacing:1px; text-transform:uppercase; font-size:12px; }
+    .instant-result h3{ font-family:'Syne',sans-serif; font-size:25px; line-height:1.12; margin:9px 0 10px; }
+    .instant-result p{ color:var(--muted); line-height:1.7; margin:0 0 18px; }
+    .instant-actions{ display:flex; gap:10px; flex-wrap:wrap; }
+    @media(max-width:900px){ .hero-grid,.signature-grid,.instant-grid{ grid-template-columns:1fr; } .hero-title{ font-size: 34px; } .signature-title{ font-size:34px; } .signature-stage{ min-height:350px; } .instant-head{ display:block; } }
+    @media(max-width:620px){ .instant-options,.instant-hero .instant-options{ grid-template-columns:1fr; } }
     @media(max-width:540px){ .signature-stage{ min-height:310px; } .sig-photo.main{ width:86%; left:7%; } .sig-photo.side-a{ width:48%; } .sig-photo.side-b{ width:46%; } }
   </style>
 
@@ -179,6 +206,34 @@
           <div class="badge-24" title="Service d'urgence">
             <svg viewBox="0 0 24 24" fill="none"><path d="M12 6v6l4 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" stroke="currentColor" stroke-width="2"/></svg>
             Urgence fuite : appel direct
+          </div>
+
+          <div class="instant-hero">
+            <div class="instant-card">
+              <div class="instant-head">
+                <span class="slabel">Diagnostic immédiat</span>
+                <h2>Un problème sur le toit ?</h2>
+              </div>
+              <div class="instant-grid">
+                <div class="instant-options">
+                  <button class="instant-choice on" type="button" data-instant="fuite"><strong>Eau qui entre</strong><span>Infiltration active.</span></button>
+                  <button class="instant-choice" type="button" data-instant="bardeaux"><strong>Bardeaux arrachés</strong><span>Vent ou usure visible.</span></button>
+                  <button class="instant-choice" type="button" data-instant="glace"><strong>Glace / neige</strong><span>Accumulation, redoux.</span></button>
+                  <button class="instant-choice" type="button" data-instant="inspection"><strong>Doute sur l'état</strong><span>Inspection avec photos.</span></button>
+                </div>
+                <div class="instant-result">
+                  <div>
+                    <span class="instant-result-label" id="instantLabel">Priorité haute</span>
+                    <h3 id="instantTitle">Limitez les dégâts maintenant</h3>
+                    <p id="instantText">Placez un seau, protégez l'intérieur et appelez. On vous guide pour limiter l'eau et cibler la cause rapidement.</p>
+                  </div>
+                  <div class="instant-actions">
+                    <a class="btn primary" href="tel:+15798860202">Appeler</a>
+                    <a class="btn blue" href="contact.html">Envoyer des photos</a>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
 
           <!-- Photos de réalisations -->
@@ -463,5 +518,23 @@
 </section>
 
 <script src="nav.js"></script>
+<script>
+const instantCopy = {
+  fuite: ['Priorité haute', 'Limitez les dégâts maintenant', "Placez un seau, protégez l'intérieur et appelez. On vous guide pour limiter l'eau et cibler la cause rapidement."],
+  bardeaux: ['À corriger vite', 'Une petite ouverture peut coûter cher', "Un bardeau manquant expose la toiture au vent et à l'eau. Une réparation ciblée peut éviter une infiltration."],
+  glace: ['Risque hivernal', 'Attention aux barrages de glace', "Au Québec, le gel et le redoux peuvent pousser l'eau sous les bardeaux. Le déneigement aide à prévenir les infiltrations."],
+  inspection: ['Prévention', 'Vérifiez avant que ça devienne urgent', "Une inspection avec photos permet de voir les solins, la ventilation, les bardeaux et les signes d'usure."],
+};
+document.querySelectorAll('.instant-choice').forEach((button) => {
+  button.addEventListener('click', () => {
+    document.querySelectorAll('.instant-choice').forEach((item) => item.classList.remove('on'));
+    button.classList.add('on');
+    const copy = instantCopy[button.dataset.instant];
+    document.getElementById('instantLabel').textContent = copy[0];
+    document.getElementById('instantTitle').textContent = copy[1];
+    document.getElementById('instantText').textContent = copy[2];
+  });
+});
+</script>
 </body>
 </html>
