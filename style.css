@@ -36,9 +36,13 @@ body > footer {
   position: relative;
   z-index: 1;
 }
-.snow-layer {
+.snow-layer,
+.rain-layer {
   position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden;
+  display: none;
 }
+body.weather-snow .snow-layer,
+body.weather-rain .rain-layer { display: block; }
 .snowflake {
   position: absolute; top: -12vh; left: var(--left);
   width: var(--size); height: var(--size);
@@ -72,6 +76,20 @@ body > footer {
 }
 @keyframes snow-spin {
   to { rotate: 360deg; }
+}
+.raindrop {
+  position: absolute; top: -14vh; left: var(--left);
+  width: 1px; height: var(--length);
+  opacity: var(--opacity);
+  border-radius: 999px;
+  background: linear-gradient(180deg, rgba(147,197,253,0), rgba(147,197,253,.70), rgba(238,246,255,.42));
+  transform: rotate(10deg);
+  animation: rain-fall var(--fall) linear infinite;
+  animation-delay: var(--delay);
+}
+@keyframes rain-fall {
+  from { transform: translate3d(0,-14vh,0) rotate(10deg); }
+  to { transform: translate3d(var(--drift),114vh,0) rotate(10deg); }
 }
 .wrap { max-width: 1100px; margin: 0 auto; padding: 0 22px; position: relative; }
 
