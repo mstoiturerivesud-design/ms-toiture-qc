@@ -46,7 +46,29 @@
     .badge-24 svg{ width:16px; height:16px; }
     .home-photos{ margin-top: 18px; }
     .home-photos .photo-cap{ font-weight:700; }
-    @media(max-width:900px){ .hero-grid{ grid-template-columns: 1fr; } .hero-title{ font-size: 34px; } }
+    .signature-section{ position:relative; overflow:hidden; border-top:1px solid var(--line); border-bottom:1px solid var(--line); background:#081224; }
+    .signature-section::before{ content:""; position:absolute; inset:0; background:linear-gradient(120deg, rgba(10,22,40,.98) 0%, rgba(10,22,40,.74) 44%, rgba(42,109,217,.18) 100%); pointer-events:none; }
+    .signature-section::after{ content:""; position:absolute; top:-40%; right:-18%; width:58%; height:180%; background:linear-gradient(110deg, transparent 0%, rgba(240,184,74,.10) 38%, rgba(255,255,255,.22) 48%, rgba(240,184,74,.10) 58%, transparent 100%); transform:rotate(9deg); animation:signatureSweep 8s ease-in-out infinite; pointer-events:none; }
+    @keyframes signatureSweep{ 0%,100%{ opacity:.25; transform:translateX(12%) rotate(9deg); } 50%{ opacity:.65; transform:translateX(-7%) rotate(9deg); } }
+    .signature-grid{ position:relative; z-index:1; display:grid; grid-template-columns:.85fr 1.15fr; gap:28px; align-items:center; }
+    .signature-title{ font-family:'Syne',sans-serif; font-size:42px; line-height:1.05; letter-spacing:-.6px; margin:8px 0 14px; }
+    .signature-title em{ color:var(--accent); font-style:normal; }
+    .signature-copy{ color:var(--muted); font-size:15px; line-height:1.8; max-width:520px; }
+    .signature-stage{ position:relative; min-height:430px; perspective:1000px; }
+    .sig-photo{ position:absolute; overflow:hidden; border:1px solid rgba(255,255,255,.16); border-radius:24px; background:var(--card); box-shadow:0 28px 60px rgba(0,0,0,.36); transform-style:preserve-3d; transition:transform .45s, box-shadow .45s; }
+    .sig-photo img{ width:100%; height:100%; object-fit:cover; display:block; filter:saturate(1.05) contrast(1.04); }
+    .sig-photo::after{ content:""; position:absolute; inset:0; background:linear-gradient(180deg, transparent 42%, rgba(10,22,40,.86)); pointer-events:none; }
+    .sig-photo strong{ position:absolute; left:16px; right:16px; bottom:14px; z-index:2; font-family:'Syne',sans-serif; font-size:16px; }
+    .sig-photo.main{ width:72%; height:70%; left:14%; top:8%; transform:rotate(-2deg); }
+    .sig-photo.side-a{ width:43%; height:42%; left:0; bottom:2%; transform:rotate(5deg) translateZ(24px); }
+    .sig-photo.side-b{ width:38%; height:40%; right:0; bottom:10%; transform:rotate(-7deg) translateZ(34px); }
+    .signature-stage:hover .sig-photo.main{ transform:rotate(-1deg) translateY(-8px) scale(1.02); box-shadow:0 34px 72px rgba(0,0,0,.42); }
+    .signature-stage:hover .sig-photo.side-a{ transform:rotate(3deg) translateY(8px) translateZ(24px); }
+    .signature-stage:hover .sig-photo.side-b{ transform:rotate(-5deg) translateY(5px) translateZ(34px); }
+    .signature-pills{ display:flex; gap:10px; flex-wrap:wrap; margin-top:18px; }
+    .signature-pills span{ border:1px solid rgba(240,184,74,.26); border-radius:999px; padding:8px 13px; background:rgba(240,184,74,.08); color:var(--acc2); font-weight:700; font-size:13px; }
+    @media(max-width:900px){ .hero-grid,.signature-grid{ grid-template-columns:1fr; } .hero-title{ font-size: 34px; } .signature-title{ font-size:34px; } .signature-stage{ min-height:350px; } }
+    @media(max-width:540px){ .signature-stage{ min-height:310px; } .sig-photo.main{ width:86%; left:7%; } .sig-photo.side-a{ width:48%; } .sig-photo.side-b{ width:46%; } }
   </style>
 
   <script type="application/ld+json">
@@ -101,9 +123,7 @@
     }
   ]
   </script>
-  <link rel="icon" href="/favicon.ico" sizes="any">
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  </head>
+</head>
 
 <body data-page="index">
 
@@ -240,6 +260,38 @@
       </div>
     </div>
   </main>
+
+  <!-- SIGNATURE VISUELLE -->
+  <section class="section signature-section">
+    <div class="wrap">
+      <div class="signature-grid">
+        <div>
+          <span class="slabel">Signature MS Toiture</span>
+          <h2 class="signature-title">Un rendu <em>net</em>, propre et durable</h2>
+          <p class="signature-copy">Chaque détail compte : préparation, étanchéité, ventilation, finition et nettoyage. Le but est simple : une toiture qui inspire confiance avant même de monter sur l'échelle.</p>
+          <div class="signature-pills">
+            <span>Finition propre</span>
+            <span>Photos du chantier</span>
+            <span>Travail documenté</span>
+          </div>
+        </div>
+        <div class="signature-stage" aria-label="Aperçu visuel de travaux de toiture">
+          <div class="sig-photo main">
+            <img src="reparation_toiture_couvreur_.jpeg" alt="Toiture résidentielle réalisée par MS Toiture">
+            <strong>Toiture résidentielle</strong>
+          </div>
+          <div class="sig-photo side-a">
+            <img src="elastomere.png" alt="Membrane et étanchéité de toiture">
+            <strong>Étanchéité</strong>
+          </div>
+          <div class="sig-photo side-b">
+            <img src="deneigement-toit-entreprise-trois-rivieres-maison.jpg.webp" alt="Déneigement de toiture au Québec">
+            <strong>Hiver Québec</strong>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- SERVICES (aperçu) -->
   <section class="section">
