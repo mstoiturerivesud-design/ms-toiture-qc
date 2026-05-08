@@ -67,6 +67,28 @@ document.addEventListener('DOMContentLoaded', () => {
   const link = document.querySelector(`.menu a[data-page="${page}"]`);
   if (link) link.classList.add('active');
 
+  if (!document.querySelector('.snow-layer')) {
+    const snowLayer = document.createElement('div');
+    snowLayer.className = 'snow-layer';
+    snowLayer.setAttribute('aria-hidden', 'true');
+    document.body.prepend(snowLayer);
+
+    const snowCount = window.matchMedia('(max-width: 640px)').matches ? 24 : 42;
+    for (let i = 0; i < snowCount; i += 1) {
+      const flake = document.createElement('span');
+      flake.className = 'snowflake';
+      flake.style.setProperty('--left', `${Math.random() * 100}%`);
+      flake.style.setProperty('--size', `${8 + Math.random() * 12}px`);
+      flake.style.setProperty('--opacity', `${0.22 + Math.random() * 0.42}`);
+      flake.style.setProperty('--fall', `${12 + Math.random() * 14}s`);
+      flake.style.setProperty('--sway', `${2.8 + Math.random() * 4.4}s`);
+      flake.style.setProperty('--spin', `${9 + Math.random() * 13}s`);
+      flake.style.setProperty('--drift', `${-90 + Math.random() * 180}px`);
+      flake.style.setProperty('--delay', `${Math.random() * -24}s`);
+      snowLayer.appendChild(flake);
+    }
+  }
+
   const revealItems = document.querySelectorAll('.section, .panel, .photo-box, .stat, .hero-card');
   revealItems.forEach((item) => item.classList.add('reveal'));
 
