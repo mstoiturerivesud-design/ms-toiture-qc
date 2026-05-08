@@ -74,25 +74,26 @@ body::before {
 
 /* ── BOUTONS ── */
 .btn {
+  position: relative; overflow: hidden;
   display: inline-flex; align-items: center; justify-content: center; gap: 8px;
   padding: 10px 18px; border-radius: 11px;
   font-family: 'DM Sans', sans-serif; font-weight: 600; font-size: 14px;
   border: 1px solid var(--line); background: rgba(255,255,255,.06);
-  color: var(--text); cursor: pointer; transition: all .2s; white-space: nowrap;
+  color: var(--text); cursor: pointer; transition: transform .22s, box-shadow .22s, background .22s, filter .22s; white-space: nowrap;
 }
-.btn:hover { background: rgba(255,255,255,.11); }
+.btn:hover { background: rgba(255,255,255,.11); transform: translateY(-1px); }
 .btn.primary {
   background: linear-gradient(135deg, var(--accent), var(--acc2));
   color: #0a1628; border-color: transparent;
   box-shadow: 0 4px 18px rgba(232,160,32,.3);
 }
-.btn.primary:hover { filter: brightness(1.08); }
+.btn.primary:hover { filter: brightness(1.08); box-shadow: 0 10px 30px rgba(232,160,32,.34); }
 .btn.blue {
   background: linear-gradient(135deg, var(--blue), var(--blue2));
   color: #fff; border-color: transparent;
   box-shadow: 0 4px 16px rgba(42,109,217,.3);
 }
-.btn.blue:hover { filter: brightness(1.1); }
+.btn.blue:hover { filter: brightness(1.1); box-shadow: 0 10px 28px rgba(42,109,217,.34); }
 .btn.full { width: 100%; margin-bottom: 10px; }
 .btn svg { width: 15px; height: 15px; flex-shrink: 0; }
 
@@ -112,11 +113,25 @@ body::before {
 
 /* ── PANELS / CARDS ── */
 .panel {
+  position: relative; overflow: hidden;
   background: var(--card); border: 1px solid var(--line);
   border-radius: var(--r); padding: 24px;
-  transition: border-color .25s;
+  transition: transform .25s, border-color .25s, box-shadow .25s;
 }
-.panel:hover { border-color: rgba(42,109,217,.35); }
+.panel::before {
+  content: ""; position: absolute; inset: -1px; opacity: 0; pointer-events: none;
+  background:
+    radial-gradient(circle at 18% 0%, rgba(240,184,74,.22), transparent 32%),
+    radial-gradient(circle at 100% 16%, rgba(61,130,240,.20), transparent 34%);
+  transition: opacity .25s;
+}
+.panel > * { position: relative; z-index: 1; }
+.panel:hover {
+  transform: translateY(-3px);
+  border-color: rgba(240,184,74,.28);
+  box-shadow: 0 16px 36px rgba(0,0,0,.22);
+}
+.panel:hover::before { opacity: 1; }
 .panel-icon {
   width: 44px; height: 44px; border-radius: 12px;
   background: rgba(42,109,217,.15); border: 1px solid rgba(42,109,217,.2);
@@ -182,9 +197,23 @@ body::before {
 /* ── STATS ── */
 .stats { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 20px; }
 .stat {
+  position: relative; overflow: hidden;
   flex: 1; min-width: 110px; background: var(--card);
   border: 1px solid var(--line); border-radius: 13px; padding: 14px 18px;
+  transition: transform .25s, border-color .25s, box-shadow .25s;
 }
+.stat::before {
+  content: ""; position: absolute; inset: 0; opacity: 0; pointer-events: none;
+  background: radial-gradient(circle at 20% 0%, rgba(240,184,74,.20), transparent 38%);
+  transition: opacity .25s;
+}
+.stat > * { position: relative; z-index: 1; }
+.stat:hover {
+  transform: translateY(-3px);
+  border-color: rgba(240,184,74,.28);
+  box-shadow: 0 14px 30px rgba(0,0,0,.18);
+}
+.stat:hover::before { opacity: 1; }
 .stat-n { font-family: 'Syne', sans-serif; font-size: 22px; font-weight: 700; color: var(--accent); display: block; }
 .stat-l { font-size: 12px; color: var(--muted); display: block; margin-top: 2px; }
 
@@ -216,6 +245,24 @@ body::before {
   position: absolute; bottom: 0; left: 0; right: 0;
   background: linear-gradient(to top, rgba(10,22,40,.9), transparent);
   padding: 20px 14px 12px; font-size: 13px; font-weight: 600;
+}
+
+/* ── APPARITION PREMIUM ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity .65s ease, transform .65s ease;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
 }
 
 /* ── HERO TAG ── */
