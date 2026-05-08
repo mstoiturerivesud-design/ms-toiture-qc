@@ -43,19 +43,22 @@ body > footer {
   position: absolute; top: -12vh; left: var(--left);
   width: var(--size); height: var(--size);
   opacity: var(--opacity);
-  color: rgba(238,246,255,.88);
   animation: snow-fall var(--fall) linear infinite;
   animation-delay: var(--delay);
-  filter: drop-shadow(0 0 5px rgba(147,197,253,.22));
+  filter: drop-shadow(0 0 5px rgba(147,197,253,.24));
 }
-.snowflake::before {
-  content: "\2744";
+.snowflake svg {
   display: block;
-  font-size: var(--size);
-  line-height: 1;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
   animation:
     snow-sway var(--sway) ease-in-out infinite alternate,
     snow-spin var(--spin) linear infinite;
+}
+.snowflake path,
+.snowflake circle {
+  stroke: rgba(238,246,255,.88);
 }
 @keyframes snow-fall {
   0% { transform: translate3d(0,-12vh,0); }
