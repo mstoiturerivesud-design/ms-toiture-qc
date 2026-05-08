@@ -67,11 +67,23 @@ document.addEventListener('DOMContentLoaded', () => {
   const link = document.querySelector(`.menu a[data-page="${page}"]`);
   if (link) link.classList.add('active');
 
-  if (!document.querySelector('.snow-layer')) {
+  const setWeatherEffect = (effect) => {
+    document.body.classList.remove('weather-snow', 'weather-rain');
+    if (effect === 'snow') document.body.classList.add('weather-snow');
+    if (effect === 'rain') document.body.classList.add('weather-rain');
+  };
+
+  if (!document.querySelector('.weather-effects')) {
+    const weatherEffects = document.createElement('div');
+    weatherEffects.className = 'weather-effects';
+    weatherEffects.setAttribute('aria-hidden', 'true');
+
     const snowLayer = document.createElement('div');
     snowLayer.className = 'snow-layer';
-    snowLayer.setAttribute('aria-hidden', 'true');
-    document.body.prepend(snowLayer);
+    const rainLayer = document.createElement('div');
+    rainLayer.className = 'rain-layer';
+    weatherEffects.append(snowLayer, rainLayer);
+    document.body.prepend(weatherEffects);
 
     const snowCount = window.matchMedia('(max-width: 640px)').matches ? 24 : 42;
     for (let i = 0; i < snowCount; i += 1) {
@@ -102,6 +114,58 @@ document.addEventListener('DOMContentLoaded', () => {
       flake.style.setProperty('--delay', `${Math.random() * -24}s`);
       snowLayer.appendChild(flake);
     }
+
+    const rainCount = window.matchMedia('(max-width: 640px)').matches ? 42 : 76;
+    for (let i = 0; i < rainCount; i += 1) {
+      const drop = document.createElement('span');
+      drop.className = 'raindrop';
+      drop.style.setProperty('--left', `${Math.random() * 100}%`);
+      drop.style.setProperty('--length', `${18 + Math.random() * 18}px`);
+      drop.style.setProperty('--opacity', `${0.18 + Math.random() * 0.28}`);
+      drop.style.setProperty('--fall', `${0.72 + Math.random() * 0.78}s`);
+      drop.style.setProperty('--drift', `${-18 + Math.random() * 12}px`);
+      drop.style.setProperty('--delay', `${Math.random() * -2.6}s`);
+      rainLayer.appendChild(drop);
+    }
+  }
+
+  const weatherOverride = new URLSearchParams(window.location.search).get('weather');
+  const weatherToEffect = (weather) => {
+    const code = Number(weather.weather_code);
+    const snow = Number(weather.snowfall || 0);
+    const rain = Number(weather.rain || 0) + Number(weather.showers || 0) + Number(weather.precipitation || 0);
+    if (weatherOverride === 'snow' || weatherOverride === 'rain' || weatherOverride === 'clear') return weatherOverride;
+    if (snow > 0 || [71, 73, 75, 77, 85, 86].includes(code)) return 'snow';
+    if (rain > 0 || [51, 53, 55, 56, 57, 61, 63, 65, 66, 67, 80, 81, 82, 95, 96, 99].includes(code)) return 'rain';
+    return 'clear';
+  };
+
+  const readCachedWeather = () => {
+    try {
+      const cached = JSON.parse(localStorage.getItem('msToitureWeather') || 'null');
+      if (cached && Date.now() - cached.time < 30 * 60 * 1000) return cached.current;
+    } catch (error) {
+      return null;
+    }
+    return null;
+  };
+
+  const applyWeather = (current) => setWeatherEffect(weatherToEffect(current));
+  const cachedWeather = readCachedWeather();
+  if (cachedWeather && !weatherOverride) applyWeather(cachedWeather);
+  if (weatherOverride) {
+    setWeatherEffect(weatherOverride);
+  } else {
+    fetch('https://api.open-meteo.com/v1/forecast?latitude=45.45&longitude=-73.47&current=weather_code,precipitation,rain,showers,snowfall&timezone=America%2FToronto', { cache: 'no-store' })
+      .then((response) => response.ok ? response.json() : null)
+      .then((data) => {
+        if (!data || !data.current) return;
+        localStorage.setItem('msToitureWeather', JSON.stringify({ time: Date.now(), current: data.current }));
+        applyWeather(data.current);
+      })
+      .catch(() => {
+        if (!cachedWeather) setWeatherEffect('snow');
+      });
   }
 
   const revealItems = document.querySelectorAll('.section, .panel, .photo-box, .stat, .hero-card');
