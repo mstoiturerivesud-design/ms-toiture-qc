@@ -31,14 +31,14 @@ body::before {
 }
 body::after {
   content: ''; position: fixed; inset: -120px 0 0; z-index: 0; pointer-events: none;
-  opacity: .34;
+  opacity: .30;
   background-image:
-    radial-gradient(circle, rgba(255,255,255,.95) 0 1px, transparent 1.8px),
-    radial-gradient(circle, rgba(255,255,255,.65) 0 1px, transparent 2.1px),
-    radial-gradient(circle, rgba(147,197,253,.62) 0 1px, transparent 2px);
-  background-size: 120px 120px, 180px 180px, 260px 260px;
-  background-position: 0 0, 48px -70px, 120px -30px;
-  animation: snowfall 18s linear infinite;
+    url("data:image/svg+xml,%3Csvg width='150' height='150' viewBox='0 0 150 150' xmlns='http://www.w3.org/2000/svg'%3E%3Cg transform='translate(75 75)' fill='none' stroke='rgba(255,255,255,.90)' stroke-width='1.35' stroke-linecap='round'%3E%3Cpath d='M0-10v20M-7-7 7 7M7-7-7 7'/%3E%3Cpath d='M-3-8 0-5l3-3M-3 8l3-3 3 3'/%3E%3C/g%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg width='220' height='220' viewBox='0 0 220 220' xmlns='http://www.w3.org/2000/svg'%3E%3Cg transform='translate(110 110)' fill='none' stroke='rgba(255,255,255,.64)' stroke-width='1.1' stroke-linecap='round'%3E%3Cpath d='M0-7v14M-5-5 5 5M5-5-5 5'/%3E%3C/g%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg width='310' height='310' viewBox='0 0 310 310' xmlns='http://www.w3.org/2000/svg'%3E%3Cg transform='translate(155 155)' fill='none' stroke='rgba(147,197,253,.55)' stroke-width='1.25' stroke-linecap='round'%3E%3Cpath d='M0-12v24M-8-8 8 8M8-8-8 8'/%3E%3Cpath d='M-4-10 0-7l4-3M-4 10l4-3 4 3'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: 150px 150px, 220px 220px, 310px 310px;
+  background-position: 0 0, 64px -80px, 150px -40px;
+  animation: snowfall 20s linear infinite;
 }
 body > header,
 body > main,
