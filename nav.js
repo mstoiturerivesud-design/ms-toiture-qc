@@ -68,9 +68,10 @@ document.addEventListener('DOMContentLoaded', () => {
   if (link) link.classList.add('active');
 
   const setWeatherEffect = (effect) => {
-    document.body.classList.remove('weather-snow', 'weather-rain');
+    document.body.classList.remove('weather-snow', 'weather-rain', 'weather-storm');
     if (effect === 'snow') document.body.classList.add('weather-snow');
     if (effect === 'rain') document.body.classList.add('weather-rain');
+    if (effect === 'storm') document.body.classList.add('weather-storm');
   };
 
   if (!document.querySelector('.weather-effects')) {
@@ -82,7 +83,9 @@ document.addEventListener('DOMContentLoaded', () => {
     snowLayer.className = 'snow-layer';
     const rainLayer = document.createElement('div');
     rainLayer.className = 'rain-layer';
-    weatherEffects.append(snowLayer, rainLayer);
+    const stormLayer = document.createElement('div');
+    stormLayer.className = 'storm-layer';
+    weatherEffects.append(snowLayer, rainLayer, stormLayer);
     document.body.prepend(weatherEffects);
 
     const snowCount = window.matchMedia('(max-width: 640px)').matches ? 24 : 42;
@@ -134,9 +137,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const code = Number(weather.weather_code);
     const snow = Number(weather.snowfall || 0);
     const rain = Number(weather.rain || 0) + Number(weather.showers || 0) + Number(weather.precipitation || 0);
-    if (weatherOverride === 'snow' || weatherOverride === 'rain' || weatherOverride === 'clear') return weatherOverride;
+    if (weatherOverride === 'snow' || weatherOverride === 'rain' || weatherOverride === 'storm' || weatherOverride === 'clear') return weatherOverride;
     if (snow > 0 || [71, 73, 75, 77, 85, 86].includes(code)) return 'snow';
-    if (rain > 0 || [51, 53, 55, 56, 57, 61, 63, 65, 66, 67, 80, 81, 82, 95, 96, 99].includes(code)) return 'rain';
+    if ([95, 96, 99].includes(code)) return 'storm';
+    if (rain > 0 || [51, 53, 55, 56, 57, 61, 63, 65, 66, 67, 80, 81, 82].includes(code)) return 'rain';
     return 'clear';
   };
 
