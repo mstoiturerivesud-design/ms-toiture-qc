@@ -29,6 +29,28 @@ body::before {
     radial-gradient(ellipse 80% 50% at 10% 0%, rgba(42,109,217,.18) 0%, transparent 60%),
     radial-gradient(ellipse 60% 40% at 90% 100%, rgba(232,160,32,.10) 0%, transparent 60%);
 }
+body::after {
+  content: ''; position: fixed; inset: -120px 0 0; z-index: 0; pointer-events: none;
+  opacity: .34;
+  background-image:
+    radial-gradient(circle, rgba(255,255,255,.95) 0 1px, transparent 1.8px),
+    radial-gradient(circle, rgba(255,255,255,.65) 0 1px, transparent 2.1px),
+    radial-gradient(circle, rgba(147,197,253,.62) 0 1px, transparent 2px);
+  background-size: 120px 120px, 180px 180px, 260px 260px;
+  background-position: 0 0, 48px -70px, 120px -30px;
+  animation: snowfall 18s linear infinite;
+}
+body > header,
+body > main,
+body > section,
+body > footer {
+  position: relative;
+  z-index: 1;
+}
+@keyframes snowfall {
+  from { transform: translate3d(0,-80px,0); }
+  to { transform: translate3d(-70px,220px,0); }
+}
 .wrap { max-width: 1100px; margin: 0 auto; padding: 0 22px; position: relative; }
 
 /* ── NAV ── */
