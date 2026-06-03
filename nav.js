@@ -14,6 +14,7 @@ const NAV_HTML = `
       <nav class="menu" aria-label="Navigation">
         <a href="index.html"       data-page="index">Accueil</a>
         <a href="services.html"    data-page="services">Services</a>
+        <a href="urgence-fuite-toiture.html" data-page="urgence">Urgence toiture</a>
         <a href="realisations.html" data-page="realisations">Réalisations</a>
         <a href="methode.html"     data-page="methode">Notre méthode</a>
         <a href="zones.html"       data-page="zones">Zones desservies</a>
@@ -45,6 +46,7 @@ const FOOTER_HTML = `
       <div class="flinks">
         <a href="index.html">Accueil</a>
         <a href="services.html">Services</a>
+        <a href="urgence-fuite-toiture.html">Urgence toiture</a>
         <a href="realisations.html">Réalisations</a>
         <a href="methode.html">Notre méthode</a>
         <a href="zones.html">Zones</a>
