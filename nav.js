@@ -189,4 +189,29 @@ document.addEventListener('DOMContentLoaded', () => {
   } else {
     revealItems.forEach((item) => item.classList.add('is-visible'));
   }
+
+  const sendLeadEvent = (eventName, params = {}) => {
+    if (typeof window.gtag !== 'function') return;
+    window.gtag('event', eventName, {
+      event_category: 'lead',
+      event_label: params.label || document.title,
+      page_location: window.location.href,
+      ...params
+    });
+  };
+
+  document.querySelectorAll('a[href^="tel:"]').forEach((link) => {
+    link.addEventListener('click', () => {
+      sendLeadEvent('phone_click', {
+        label: 'Appel telephone',
+        phone_number: link.getAttribute('href').replace('tel:', '')
+      });
+    });
+  });
+
+  document.querySelectorAll('a[href*="contact.html"], a[href="/contact"], a[href="contact"]').forEach((link) => {
+    link.addEventListener('click', () => {
+      sendLeadEvent('quote_click', { label: 'Clic soumission' });
+    });
+  });
 });
