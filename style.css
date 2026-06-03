@@ -385,6 +385,18 @@ body.weather-storm .storm-layer { display: block; }
 .form-success .chk svg { width: 26px; height: 26px; color: #22c55e; }
 .form-success h3 { font-family: 'Syne', sans-serif; font-size: 19px; margin-bottom: 7px; }
 .form-success p { color: var(--muted); font-size: 13px; }
+.form-alert {
+  display: none;
+  margin-top: 12px;
+  padding: 12px 14px;
+  border-radius: 14px;
+  border: 1px solid rgba(232,160,32,.36);
+  background: rgba(232,160,32,.11);
+  color: var(--text);
+  font-size: 13px;
+  line-height: 1.55;
+}
+.form-alert a { color: var(--acc2); font-weight: 800; }
 
 /* ── CONTACT LAYOUT ── */
 .contact-layout { display: grid; grid-template-columns: 1fr 1.4fr; gap: 16px; }
