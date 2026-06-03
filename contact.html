@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -124,6 +125,7 @@
               Envoyer la demande
             </button>
             <p class="fnote">La demande est envoyée directement à <strong>mstoiture.rivesud@gmail.com</strong>, sans ouvrir l'application courriel du client. Vous pouvez aussi appeler le <a href="tel:+15798860202">1 (579) 886-0202</a>.</p>
+            <div class="form-alert" id="formAlert" role="alert" aria-live="polite"></div>
           </form>
 
           <div class="form-success" id="ok">
@@ -145,15 +147,30 @@ document.getElementById('qForm').addEventListener('submit', function(e) {
   var form = this;
   var button = form.querySelector('button[type="submit"]');
   var originalText = button.innerHTML;
+  var alertBox = document.getElementById('formAlert');
   var data = new FormData(form);
   var name = document.getElementById('fn').value.trim();
+  var phone = document.getElementById('fp').value.trim();
+  var email = document.getElementById('fe').value.trim();
   var city = document.getElementById('fc').value.trim();
   var service = document.getElementById('ft').value;
+  var message = document.getElementById('fm').value.trim();
 
   data.set('_subject', 'Demande de soumission - ' + service + ' - ' + city + ' - ' + name);
 
   button.disabled = true;
   button.innerHTML = 'Envoi en cours...';
+  alertBox.style.display = 'none';
+  alertBox.innerHTML = '';
+
+  if (typeof window.gtag === 'function') {
+    window.gtag('event', 'quote_form_attempt', {
+      event_category: 'lead',
+      event_label: service,
+      city: city,
+      page_location: window.location.href
+    });
+  }
 
   fetch('https://formsubmit.co/ajax/mstoiture.rivesud@gmail.com', {
     method: 'POST',
@@ -167,13 +184,40 @@ document.getElementById('qForm').addEventListener('submit', function(e) {
   .then(function() {
     form.style.display = 'none';
     document.getElementById('ok').style.display = 'block';
+    if (typeof window.gtag === 'function') {
+      window.gtag('event', 'quote_form_submit', {
+        event_category: 'lead',
+        event_label: service,
+        city: city,
+        page_location: window.location.href
+      });
+    }
   })
   .catch(function() {
     button.disabled = false;
     button.innerHTML = originalText;
-    alert("Le formulaire n'a pas pu être envoyé. Appelez-nous au 1 (579) 886-0202 ou réessayez dans quelques instants.");
+    var mailSubject = encodeURIComponent('Demande de soumission - ' + service + ' - ' + city);
+    var mailBody = encodeURIComponent(
+      'Nom : ' + name + '\n' +
+      'Telephone : ' + phone + '\n' +
+      'Courriel : ' + email + '\n' +
+      'Ville : ' + city + '\n' +
+      'Service : ' + service + '\n\n' +
+      'Description :\n' + message
+    );
+    alertBox.innerHTML = 'Le formulaire bloque pour le moment. Appelez directement le <a href="tel:+15798860202">1 (579) 886-0202</a> ou envoyez la demande par courriel : <a href="mailto:mstoiture.rivesud@gmail.com?subject=' + mailSubject + '&body=' + mailBody + '">mstoiture.rivesud@gmail.com</a>.';
+    alertBox.style.display = 'block';
+    if (typeof window.gtag === 'function') {
+      window.gtag('event', 'quote_form_error', {
+        event_category: 'lead',
+        event_label: service,
+        city: city,
+        page_location: window.location.href
+      });
+    }
   });
 });
 </script>
 </body>
 </html>
+
